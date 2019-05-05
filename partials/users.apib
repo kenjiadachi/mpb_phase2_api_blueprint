@@ -1,0 +1,632 @@
+# Group User周り
+Userと、Userが持つ情報(Portfolios, Skills, Educations, Licenses, WorkingConditions, UserMailAlerts)周りをまとめています。
+
+## Users [/v1/users/:id]
+
+### GET
+ユーザー情報を取得する <br>
+Cacoo: 10, 10.5, 11, 18, 21.0~21.2, 22, 22.1, 33, 33.1
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    {
+        "id": 1,
+        "name": "菊地 航",
+        "display_name": "DH280",
+        "sex": "男性",
+        "birthdate": "2019/01/01",
+        "phone_number": "080-1234-5678",
+        "email": "foo@example.com"
+    }
+
+### PATCH
+User情報を編集する
+
+## users  [/v1/users/]
+
+### POST
+Userを追加する
+
+### DELETE
+Userを削除する
+
+## users  [/v1/users/search?utf8=✓&q~]
+
+### GET
+userの検索を行います <br>
+Cacoo: 32
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    {
+        "id": 1,
+        "display_name": "DH280",
+        "age": 32,
+        "sex": "男性",
+        "skills": [ "Java", "C++" ], <!--加工が必要! -->
+        "working_condition": {
+          "is_engineer": true,
+          "is_designer": false,
+          "is_sales": false,
+          "is_clerk": false
+        }
+    }
+
+
+
+
+
+## Portfolios [/v1/users/:id/portfolios/]
+
+### GET
+userにひもづく、全てのportfolioを取得する <br>
+Cacoo: 10, 13.5, 33
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+      [
+          {
+              "id": 1,
+              "user_id": 1,
+              "image": "http://placehold.jp/150x150.png",
+              "title": "社会人用留学斡旋会社のwebサイトデザイン",
+              "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
+              "creation_start_date": "2019/01/01",
+              "creation_end_date": "2019/03/01",
+              "price": "500,000",
+              "url": "http://example.com/"
+          },
+          {
+              "id": 2,
+              "user_id": 1,
+              "image": "http://placehold.jp/150x150.png",
+              "title": "金融系アプリのwebサイトデザイン",
+              "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
+              "creation_start_date": "2019/01/01",
+              "creation_end_date": "2019/03/01",
+              "price": "500,000",
+              "url": "http://example.com/"
+          }
+      ]
+
+
+### POST
+portfolioを追加する
+
+## Portfolios [/v1/portfolios/:portfolio_id]
+
+<!-- 必要なしと判断。全体の情報からフロントで修正してもらう。
+### GET
+特定のportfolioの情報を取得する <br>
+Cacoo:
+-->
+
+### PATCH
+portfolioを編集する
+
+### DELETE
+portfolioを削除する
+
+
+## Licenses [/v1/users/:id/licenses]
+
+### GET
+userにひもづく、全てのLicenseの情報を取得する <br>
+Cacoo: 10, (10.5), 12, 33, 33.1
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+      [
+          {
+              "id": 1,
+              "user_id": 1,
+              "get_date": "2019/01/01",
+              "name": "応用情報技術者"
+          },
+          {
+              "id": 2,
+              "user_id": 1,
+              "get_date": "2019/02/01",
+              "name": "基本情報技術者"
+          }
+      ]
+
+
+
+### POST
+Licenseを追加する
+
+
+## Licenses [/v1/licenses/:license_id]
+
+### DELETE
+資格を削除する
+
+
+## Skills [/v1/users/:id/skills]
+
+### GET
+userにひもづく、全てのSkillの情報を取得する <br>
+Cacoo: 10, 10.5, 13, 24.0~24.5, 25, 33, 33.1
+<!-- 検索など、複数の場合はuserの中に入れちゃってもいいかも！ -->
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+      {
+          "remark": "秘書検定1級、漢検1級",
+          "skill_tools": [
+              {
+                  "id": 1,
+                  "user_id": 1,
+                  "years_count": 3,
+                  "tool_master": {
+                    "id": 1,
+                    "name": "Java"
+                  }
+              },
+              {
+                  "id": 2,
+                  "user_id": 1,
+                  "years_count": 5,
+                  "tool_master": {
+                    "id": 2,
+                    "name": "C++"
+                  }
+              }
+          ]
+      }
+
+### POST
+スキルを追加する
+
+
+## Skills [/v1/skills/:skill_id]
+
+### DELETE
+スキルを削除する
+
+### PATCH
+スキルを編集する
+
+
+## WorkingConditions [/v1/users/:id/working_condition]
+
+### GET
+userにひもづく、WorkingConditionの情報を取得する <br>
+Cacoo: 10, 10.5,　33
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+      {
+          "id": 1,
+          "user_id": 1,
+          "is_engineer": true,
+          "is_designer": false,
+          "is_sales": false,
+          "is_clerk": false,
+          "min_price": 300000,
+          "max_price": 1000000,
+          "scheduled_start_date": "2019/10/10",
+          "activable_count": 3,
+          "residable_count": 2,
+          "desired_holiday": "土日祝",
+          "appeal_point": "私は天才です",
+          "comment": "すごい人です！",
+          "closest_station": "丸ノ内線 四ツ谷駅"
+      }
+
+<!-- 不要。users#createと同じタイミングで作成する。
+### POST
+希望条件を追加する
+-->
+
+## WorkingConditions [/v1/users/:id/working_conditions/:working_condition_id]
+
+### DELETE
+希望条件を削除する
+
+### PATCH
+希望条件を編集する
+
+
+## Educations [/v1/users/:id/educations]
+
+### POST
+学歴を追加する
+
+
+## UsersMailAlerts [/v1/users/:id/mail_alert]
+
+### PATCH
+メール通知設定を編集する
+
+### GET
+メール通知設定を取得する <br>
+Cacoo: 22.5, 22.6
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+      {
+          "id": 1,
+          "user_id": 1,
+          "needs_when_notice_is_send": true,
+          "needs_when_offered": false,
+          "needs_when_favorite_project_is_changed": false,
+          "needs_when_favorite_project_is_closed": false,
+          "needs_before_mtg": false
+      }
+
+
+
+## Educations [/v1/users/:id/educations/:education_id]
+
+### DELETE
+学歴を削除する
+
+### PATCH
+学歴を編集する
+
+
+## Resumes [/v1/users/:id/resumes]
+
+### POST
+職務経歴を追加する
+
+
+## Resumes [/v1/users/:id/resumes/:resume_id]
+
+### DELETE
+職務経歴を削除する
+
+### PATCH
+職務経歴を編集する
+
+
+## Favorables [/v1/users/:id/favorables]
+
+### POST
+案件のお気に入り
+paramsとして、projectが必要です
+
+## Projects [/v1/users/projects?utf8=✓&q~]
+
+<!-- 案件の方に移動
+### GET
+案件の検索
+-->
+
+
+<!--
+/' ユーザー周り '/
+class ユーザーusers {
+  +id: integer [PK]
+  ---
+  last_name: string
+  first_name: string
+  last_name_kana: string
+  first_name_kana: string
+  display_name: string
+  sex-: integer["男性", "女性"]
+  birthdate: integer[男, 女, 記入しない]
+  phone_number: string
+  email: string
+}
+
+  class UsersMailAlerts {
+    +id: integer [PK]
+    ---
+    #user_id: integer [FK]
+    運営会社からのお知らせ通知メールを受け取る？-needs_email_from_managing_company-: boolean
+    企業から案件をオファーされた時に通知メールを受け取る？-needs_email_when_offered-: boolean
+    お気に入りした案件の情報が変更された時に通知メールを受け取る？-needs_email_when_favorite_project_is_changed-: boolean
+    お気に入りした案件が掲載終了になった時に通知メールを受け取る？-needs_email_when_favorite_project_is_closed-: boolean
+    確定した面談日の前日に通知メールを受け取る？-needs_email_before_mtg-: boolean
+  }
+
+  class ポートフォリオportfolios {
+    +ポートフォリオID: integer [PK]
+    ---
+    #ユーザーID: integer [FK]
+    画像-image-: string
+    タイトル-title-: string
+    説明文-description-: string
+    作成開始日-creation_start_date-: date
+    作成完了日-creation_end_date-: date
+    金額-price-: integer
+    関連URL-url-: string
+  }
+
+  class 希望要件working_conditions {
+    +希望要件ID: integer [PK]
+    ---
+    #ユーザーID: integer [FK]
+    エンジニア？-is_engineer?: boolean
+    デザイナー？-is_designer?: boolean
+    営業？-is_sales?: boolean
+    事務？-is_clerk?: boolean
+    最低希望単価-min_price-: integer
+    最高希望単価-max_price-: integer
+    稼働開始可能日-scheduled_start_date-: date
+    一週間の稼働可能日-activable_count-: integer
+    一週間の常駐可能日-residable_count-: integer
+    休みの希望-desired_holiday-: integer[土日祝, 平日, 曜日を問わない]
+    アピールポイント-appeal_point-: text
+    管理者からのコメント-comment-: text
+    最寄り駅の路線名-closest_stations_line-: string
+    最寄り駅の駅名-closest_stations_name-: string
+  }
+
+  class 学歴educations {
+    +学歴ID: integer [PK]
+    ---
+    #ユーザーID: integer [FK]
+    学校名-school_name-: title
+    入学日-start_date-: date
+    卒業日-end_date-: date
+  }
+
+  class ユーザーー資格 {
+    +資格ID: integer [PK]
+    ---
+    #ユーザーID: integer [FK]
+    #資格マスタID: integer [FK]
+    取得日-get_date-: date
+  }
+
+
+
+  /' 職務経歴関連 '/
+
+  class 職務経歴resumes {
+    +職務経歴ID: integer [FK]
+    ---
+    #ユーザーID: integer [PK]
+    職種-job_category-: integer
+    会社名-company_name-: string
+    勤務形態-working_style-: integer[業務委託, ...?]
+    参画開始日-start_date-: date
+    参画終了日-end_date-: date
+    業界-industry-: integer[IT, ...?]
+    役職・役割-position-: string
+    チーム人数-members_count-: integer
+    プロジェクト/業務名-project_name-: string
+    プロジェクト/業務概要-project_description-: text
+  }
+
+    class 職務経歴ーツール {
+      +職務経歴ーツールID: integer [PK]
+      ---
+      #職務経歴ID: integer [FK]
+      #ツールマスタID: integer [FK]
+    }
+
+    /' 職務経歴ーエンジニア関連 '/
+
+    class 職務経歴ーエンジニア追加項目 {
+      +職務経歴ーエンジニア追加項目ID: integer [FK]
+      ---
+      #職務経歴ID: integer [PK]
+      要件定義やった？-contains_requirement_definition-: boolean
+      基本設計やった？-contains_basic_design-: boolean
+      詳細設計やった？-contains_detailed_design-: boolean
+      実装やった？-contains_coding-: boolean
+      テストやった？-contains_test-: boolean
+      保守・運用やった？-contains_maintenance-: boolean
+    }
+
+    /' 職務経歴ーデザイナー関連 '/
+
+    class 職務経歴ーデザイナー追加項目 {
+      +職務経歴ーデザイナー追加項目ID: integer [FK]
+      ---
+      #職務経歴ID: integer [PK]
+      グラフィックデザイナー？-is_graphic_designer-: boolean
+      UI/UXデザイナー？-is_ui_ux_designer-: boolean
+      Webデザイナー？-is_web_designer-: boolean
+      DTPデザイナー？-is_dtp_designer-: boolean
+      ゲームデザイナー？-is_game_designer-: boolean
+      CGデザイナー？-is_cg_designer-: boolean
+    }
+
+
+  /' 要件関連 '/
+  class スキルskills {
+    +スキルID: integer [PK]
+    ---
+    #ユーザーID: integer [FK]
+    備考-remark-: text
+  }
+
+    /' スキル関連 '/
+    class ツールースキル {
+      +ツールースキルID: integer [PK]
+      ---
+      #スキルID: integer [FK]
+      #ツールマスタID: integer [FK]
+      経験年数-years_count-: integer
+    }
+
+/' 企業周り '/
+
+class 企業companies {
+  +企業ID: integer [PK]
+  ---
+  企業名-name-: string
+  住所ー郵便番号-postal_code-: string
+  住所ー住所-address-: string
+  URL-url-: string
+  電話番号-phone_number-: string
+  アイコン-icon-: string
+}
+
+  class 担当者staffs {
+    +担当者ID: integer [PK]
+    ---
+    #企業ID: integer [FK]
+    名前-name-: string
+    電話番号-phone_number-: string
+    メール-email-: string
+    パスワード[暗号化]: string
+    アイコン: string
+
+
+  }
+
+    class StaffsMailAlerts {
+      +ID: integer [PK]
+      ---
+      #staffID: integer [FK]
+      メッセージスレッドが新しく立ち上がった時に通知メールを受け取る？-needs_email_when_thread_is_created-: boolean
+      メッセージスレッドが削除された時に通知メールを受け取る？-needs_email_when_thread_is_deleted-: boolean
+      お気に入りした人材の情報が変更された時に通知メールを受け取る？-needs_email_when_favorite_user_is_changed-: boolean
+      お気に入りした人材が他案件で決定した時に通知メールを受け取る？-needs_email_when_favorite_user_is_hired-: boolean
+      確定した面談日の前日に通知メールを受け取る？-needs_email_before_mtg-: boolean
+    }
+
+
+/' 案件周り '/
+class 案件projects {
+  +案件ID: integer [PK]
+  ---
+  #企業ID: integer [FK]
+  案件名-name-: string
+  スキルカテゴリ-skill_category-: integer[どんなものが入る？]
+  担当工程-phase-: integer[どんなものが入る？]<-複数説
+  ポジション-position-: integer[どんなものが入る？]<-複数説
+  期間開始日-start_date-: date
+  期間終了日-end_date-: date
+  休日-holiday-: integer[土日祝, 平日, 曜日を問わない？]
+  月間稼動見込み時間-scheduled_hour_count-: integer
+  スキル詳細-skill-: text
+  作業内容-work_content-: string
+  業界-industry-: integer[どんなものが入る？]
+  最低精算基準時間-min_settlement_hour-: integer
+  最高精算基準時間-max_settlement_hour-: integer
+  週4以下勤務について-min_working_date_count-: integer[どんなものが入る？]
+  リモート可？-is_remotable-: boolean
+  服装自由？-is_dressable-: boolean
+  未経験OK？-is_newbiable-: boolean
+  交通費支給？-exists_travel_cost-: boolean
+  フレックス制？-is_flex-: boolean
+  契約形態-contract_style-: integer[どんなものが入る？]
+  最寄り駅の路線名-closest_stations_line-: string
+  最寄り駅の駅名-closest_stations_name-: string
+  単価の単位-unit-: integer[どんなものが入る？]
+  単価の最低価格-min_price-: integer
+  単価の最高価格-max_price-: integer
+  最低募集人数-min_personnel-: integer
+  最高募集人数-max_personnel-: integer
+  最低面談回数-min_mtg_count-: integer
+  最高面談回数-max_mtg_count-: integer
+  備考: text
+  公開中？: boolean
+}
+
+class 企業ーユーザーへのお気に入りcompany_favorable {
+  +企業ーユーザーへのお気に入りID: integer [PK]
+  ---
+  #企業ID: integer [FK]
+  #ユーザーID: integer [FK]
+}
+
+class ユーザーー案件へのお気に入りuser_favorable {
+  +ユーザーー案件へのお気に入りID: integer [PK]
+  ---
+  #ユーザーID: integer [FK]
+  #案件ID: integer [FK]
+}
+
+class 案件ーユーザーへのオファーoffers {
+  +案件ーユーザーへのオファーID: integer [PK]
+  ---
+  #案件ID: integer [FK]
+  #ユーザーID: integer [FK]
+  面談日時-mtg_date-: date
+  ステータス-status-: integer[未, ...?]
+  会話終了した？-is_ended-:boolean
+  話してみる？-is_opened-: boolean
+  この画面から削除？-is_deleted-: boolean
+}
+
+class 担当者からのメッセージ {
+  +担当者からのメッセージID: integer [PK]
+  ---
+  #案件ーユーザーへのオファーID: integer [FK]
+  #担当者ID: integer [FK]
+  管理者は読んだ？: boolean
+  ユーザーは読んだ？: boolean
+}
+
+class 管理者からのメッセージ {
+  +管理者からのメッセージID: integer [PK]
+  ---
+  #案件ーユーザーへのオファーID: integer [FK]
+  #管理者ID: integer [FK]
+  担当者は読んだ？: boolean
+  ユーザーは読んだ？: boolean
+}
+
+class ユーザーからのメッセージ {
+  +ユーザーからのメッセージID: integer [PK]
+  ---
+  #案件ーユーザーへのオファーID: integer [FK]
+  #ユーザーID: integer [FK]
+  担当者は読んだ？: boolean
+  管理者は読んだ？: boolean
+}
+
+
+
+/' 各種マスタ '/
+
+class ツールマスタtool_master {
+  +ツールマスタID: integer [PK]
+  ---
+  ツール名-name-: string
+}
+
+class 資格マスタlicense_master {
+  +資格マスタID: integer [PK]
+  ---
+  資格名: string
+}
+-->
