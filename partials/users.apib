@@ -6,7 +6,7 @@ Userと、Userが持つ情報(Portfolios, Skills, Educations, Licenses, Hopes, U
 ### GET
 
 ユーザー情報を取得する <br>
-Cacoo: 11, 18, 21.0~21.2, 22, 22.1
+Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
 ナビバーの吹き出しにも使用
 
 + Request
@@ -41,19 +41,16 @@ Cacoo: 11
 
     + Attribute
 
-        + first_name: 航 (string) - Userの名
-        + last_name: 菊地 (string) - Userの姓
-        + first_name_kana: わたる (string) - Userの名ふりがな
-        + last_name_kana: きくち (string) - Userの姓ふりがな
-        + sex: male (enum) - Userの性別
+        + first_name: 航 (string) - 名
+        + last_name: 菊地 (string) - 姓
+        + first_name_kana: わたる (string) - 名ふりがな
+        + last_name_kana: きくち (string) - 姓ふりがな
+        + sex: male (enum) - 性別
             + male (string) - 男性
             + female (string) - 女性
-        + birthdate: 1990/01/01 (string) - Userの誕生日
-        + phone_number: `080-1234-5678` (string) - Userの電話番号
-        + email: foo@example.com (string) - Userのメールアドレス
-        + professions: (array)
-            + engineer (string) - Userがエンジニアを希望職種として選択
-            + designer (string) - Userがデザイナーを希望職種として選択
+        + birthdate: 1990/01/01 (string) - 誕生日
+        + phone_number: `080-1234-5678` (string) - 電話番号
+        + email: foo@example.com (string) - メールアドレス
 
 + Response 200 (application/json)
 
@@ -69,7 +66,7 @@ Cacoo: 11
         + code: 400 (number)
         + message: Bad Request (string)
 
-## users  [/v1/users/]
+## Users  [/v1/users/]
 
 ### POST
 Userを追加する <br>
@@ -79,19 +76,16 @@ Cacoo: 1.1
 
     + Attribute
 
-        + first_name: 航 (string, required) - Userの名
-        + last_name: 菊地 (string, required) - Userの姓
-        + first_name_kana: わたる (string, required) - Userの名ふりがな
-        + last_name_kana: きくち (string, required) - Userの姓ふりがな
-        + sex: male (enum, required) - Userの性別
+        + first_name: 航 (string, required) - 名
+        + last_name: 菊地 (string, required) - 姓
+        + first_name_kana: わたる (string, required) - 名ふりがな
+        + last_name_kana: きくち (string, required) - 姓ふりがな
+        + sex: male (enum, required) - 性別
             + male (string) - 男性
             + female (string) - 女性
-        + birthdate: 1990/01/01 (string, required) - Userの誕生日
-        + phone_number: `080-1234-5678` (string, required) - Userの電話番号
-        + email: foo@example.com (string, required) - Userのメールアドレス
-        + professions: (array)
-            + engineer (string) - Userがエンジニアを希望職種として選択
-            + designer (string) - Userがデザイナーを希望職種として選択
+        + birthdate: 1990/01/01 (string, required) - 誕生日
+        + phone_number: `080-1234-5678` (string, required) - 電話番号
+        + email: foo@example.com (string, required) - メールアドレス
 
 + Response 200 (application/json)
 
@@ -107,19 +101,25 @@ Cacoo: 1.1
         + code: 400 (number)
         + message: Bad Request (string)
 
-<!--
 ### DELETE
 Userを削除する
--->
-## users  [/v1/users/search?utf8=✓&q~]
+
+## Users  [/v1/users/search]
 
 ### GET
 userの検索を行います <br>
-Cacoo: 32
+Cacoo: 32 <br>
+ransack使用予定。APIで使用したことないので少し調べてから追記します。
 
 + Request
-  + Headers
-    Content-Type: application/json
+    + Headers
+        Content-Type: application/json
+
+    + Request (application/json)
+        + Attribute
+
+
+
 
 + Response 200 (application/json)
 
@@ -185,12 +185,91 @@ Cacoo: 13.5
 
 
 ### POST
-portfolioを追加する
+portfolioを追加する <br>
+Cacoo: 13.5
+
+
++ Request (application/json)
+
+    + Attribute
+
+        + image: http://placehold.jp/150x150.png (string) - Portfolioのキャプチャ画像など
+        + title: 社会人用留学斡旋会社のwebサイトデザイン (string, required) - Portfolioのタイトル
+        + description: サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。 (string) - Portfolioの説明文
+        + start_date: 2019/01/01 (string) - Portfolioの開始日
+        + end_date: 2019/03/01 (string) - Portfolioの終了日
+        + price: _0_5000 (enum, required) - Portfolioの参考価格
+            + _0_5000 (string) - 5千円未満
+            + _5000_10000 (string) - 5千円〜1万円
+            + _10000_20000 (string) - 1万円〜2万円
+            + _20000_50000 (string) - 2万円〜5万円
+            + _50000_100000 (string) - 5万円〜10万円
+            + _100000_200000 (string) - 10万円〜20万円
+            + _200000_300000 (string) - 20万円〜30万円
+            + _300000_500000 (string) - 30万円〜50万円
+            + _500000_1000000 (string) - 50万円〜100万円
+            + _1000000_3000000 (string) - 100万円〜300万円
+            + _3000000_5000000 (string) - 300万円〜500万円
+            + more (string) - 500万円以上
+        + url: http://example.com/ (string) - Portfolioの参考URL
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success portfolio create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Portfolios [/v1/portfolios/:portfolio_id]
 
 ### PATCH
-portfolioを編集する
+portfolioを編集する <br>
+Cacoo: 13.5
+
++ Request (application/json)
+
+    + Attribute
+
+        + image: http://placehold.jp/150x150.png (string) - Portfolioのキャプチャ画像など
+        + title: 社会人用留学斡旋会社のwebサイトデザイン (string) - タイトル
+        + description: サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。 (string) - 説明文
+        + start_date: 2019/01/01 (string) - 開始日
+        + end_date: 2019/03/01 (string) - 終了日
+        + price: _0_5000 (enum) - 参考価格
+            + _0_5000 (string) - 5千円未満
+            + _5000_10000 (string) - 5千円〜1万円
+            + _10000_20000 (string) - 1万円〜2万円
+            + _20000_50000 (string) - 2万円〜5万円
+            + _50000_100000 (string) - 5万円〜10万円
+            + _100000_200000 (string) - 10万円〜20万円
+            + _200000_300000 (string) - 20万円〜30万円
+            + _300000_500000 (string) - 30万円〜50万円
+            + _500000_1000000 (string) - 50万円〜100万円
+            + _1000000_3000000 (string) - 100万円〜300万円
+            + _3000000_5000000 (string) - 300万円〜500万円
+            + more (string) - 500万円以上
+        + url: http://example.com/ (string) - 参考URL
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success portfolio update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ### DELETE
 portfolioを削除する
@@ -226,16 +305,61 @@ Cacoo: 12
       ]
 
 
-
 ### POST
 Licenseを追加する
+Cacoo: 12
 
++ Request (application/json)
+
+    + Attribute
+
+        + name: 基本情報技術者 (string) - Licenseの名前
+        + get_date: 2019/01/01 (string) - Portfolioの開始日
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success license create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Licenses [/v1/licenses/:license_id]
 
 ### DELETE
-資格を削除する
+Licenseを削除する
 
+
+### PATCH
+Licenseを編集する <br>
+Cacoo: 12
+
++ Request (application/json)
+
+    + Attribute
+
+        + name: 基本情報技術者 (string) - Licenseの名前
+        + get_date: 2019/01/01 (string) - Licenseの開始日
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success license create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Skills [/v1/users/:id/skills]
 
@@ -264,17 +388,59 @@ Cacoo: 13, 24.0~24.5, 25
       }
 
 ### POST
-スキルを追加する
+Skillを追加する <br>
+Cacoo: 13
 
++ Request (application/json)
+
+    + Attribute
+
+        + name: Java (string, required) - skillの名前
+        + years_count: 2 (number, required) - skillの経験年数
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success skill create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Skills [/v1/skills/:skill_id]
 
 ### DELETE
-スキルを削除する
+Skillを削除する
 
 ### PATCH
-スキルを編集する
+Skillを編集する <br>
+Cacoo: 13
 
++ Request (application/json)
+
+    + Attribute
+
+        + name: Java (string) - skill名
+        + years_count: 2 (number) - 経験年数
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success skill update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Hopes [/v1/users/:id/hopes]
 
@@ -309,22 +475,131 @@ Cacoo: 14
 ## Hopes[/v1/users/:id/hopes/:hope_id]
 
 ### DELETE
-希望条件を削除する
+Hopeを削除する
 
 ### PATCH
-希望条件を編集する
+Hopeを編集する <br>
+Cacoo: 14
 
++ Request (application/json)
+
+    + Attribute
+        + professions: (array)
+            + エンジニア (string) - エンジニアを希望職種として選択
+            + デザイナー (string) - デザイナーを希望職種として選択
+            + 営業 (string) - 営業を希望職種として選択
+            + 事務 (string) - 事務を希望職種として選択
+        + min_price: 300000 (number) - 最低希望価格
+        + max_price: 1000000 (number) - 最高希望価格
+        + scheduled_start_date: 2019/10/10 (string) - 稼働開始可能日
+        + activable_count: 3 (number) - 1週間のうち働ける日数
+        + residable_count: 2 (number) - 1週間のうち常駐できる日数
+        + holiday: weekends_and_holidays (enum, required) - 休日の希望
+            + weekends_and_holidays (string) - 土日祝
+            + weekdays (string) - 平日
+            + any_time (string) - 曜日を問わない
+        + appeal_point: 私は天才です (string) - アピールポイント
+        + comment: すごい人です！ (string) - 担当コンサルタントからのコメント
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success hope update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Educations [/v1/users/:id/educations]
 
 ### POST
-学歴を追加する
+Educationを追加する <br>
+Cacoo: 15
 
++ Request (application/json)
+
+    + Attribute
+        + school_name: 早稲田大学 (string, required) - 学校名
+        + start_date: 2012/04/01 (string) - 入学日
+        + end_date: 2016/03/31 (string) - 卒業日
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success education create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
+
+## Educations [/v1/users/:id/educations/:education_id]
+
+### DELETE
+Educationを削除する
+
+### PATCH
+Educationを編集する <br>
+Cacoo: 15
+
++ Request (application/json)
+
+    + Attribute
+        + school_name: 早稲田大学 (string) - 学校名
+        + start_date: 2012/04/01 (string) - 入学日
+        + end_date: 2016/03/31 (string) - 卒業日
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success education update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## UserMailAlerts [/v1/users/:id/mail_alert]
 
 ### PATCH
-メール通知設定を編集する
+メール通知設定を編集する <br>
+Cacoo: 22.5
+
++ Request (application/json)
+
+    + Attribute
+        + needs_when_send_notice: true (boolean, required) - 運営会社からのお知らせ通知メールを受け取る
+        + needs_when_offered: false (boolean, required) - 企業から案件をオファーされた時に通知メールを受け取る
+        + needs_when_favorite_is_changed: false (boolean, required) - お気に入りした案件の情報が変更された時に通知メールを受け取る
+        + needs_when_favorite_is_closed: false (boolean, required) - お気に入りした案件が掲載終了になった時に通知メールを受け取る
+        + needs_before_mtg: false (boolean, required) - 確定した面談日の前日に通知メールを受け取る
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success user_mail_alert update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ### GET
 メール通知設定を取得する <br>
@@ -347,20 +622,66 @@ Cacoo: 22.5, 22.6
           "needs_before_mtg": false
       }
 
-## Educations [/v1/users/:id/educations/:education_id]
-
-### DELETE
-学歴を削除する
-
-### PATCH
-学歴を編集する
-
 
 ## Resumes [/v1/users/:id/resumes]
 
 ### POST
-職務経歴を追加する
+Resumeを追加する <br>
+Cacoo: 16.1~4
 
++ Request (application/json)
+
+    + Attribute
+        + company_name: Peach株式会社 (string) - 会社名
+        + working_style: permanent_staff (enum, required) - 勤務形態
+            + permanent_staff (string) - 正社員
+            + contract_staff (string) - 契約社員
+            + parttime_staff (string) - パート・アルバイト
+            + subcontractor (string) - 業務委託
+        + start_date: 2018/04/01 (string) - 参画開始日
+        + end_date: 2019/03/31 (string) - 参画終了日
+        + industry: it_internet_game (enum, required) - 業界
+            + it_internet_game (string) - IT・インターネット・ゲーム
+            + maker (string) - メーカー
+            + consulting (string) - コンサルティング
+            + logistick (string) - 商社・流通・小売・サービス
+            + advertising (string) - 広告・マスコミ・エンタメ
+            + finance (string) - 金融・不動産・建設
+            + medical (string) - 医薬・医療・メディカル
+            + infrastructure (string) - インフラ・公共・その他
+            + other (string) - その他
+        + position: コンサルタント (string) - 役職、役割
+        + members_count: 5　(number) - チーム人数
+        + project_name: 生産管理システムバージョンアップ支援 (string, required) - プロジェクト/業務名
+        + project_description: Rails化を行いました。 (string) - プロジェクト/業務概要
+        + resume_engineer: (object)
+            + contains_requirement_definition: false (boolean) - エンジニア追加項目/要件定義に携わったか？
+            + contains_basic_design: false (boolean) - エンジニア追加項目/基本設計に携わったか？
+            + contains_detailed_design: false (boolean) - エンジニア追加項目/詳細設計に携わったか？
+            + contains_coding: true (boolean) - エンジニア追加項目/実装に携わったか？
+            + contains_test: true (boolean) - エンジニア追加項目/テストに携わったか？
+            + contains_maintenance: true (boolean) - エンジニア追加項目/保守・運用に携わったか？
+        + resume_designer: (object)
+            + contains_graphic_design: false (boolean) - デザイナー追加項目/グラフィックに携わったか？
+            + contains_ui_ux_design: false (boolean) - デザイナー追加項目/UI/UXに携わったか？
+            + contains_web_design: false (boolean) - デザイナー追加項目/Webに携わったか？
+            + contains_dtp_design: true (boolean) - デザイナー追加項目/DTPに携わったか？
+            + contains_game_design: true (boolean) - デザイナー追加項目/ゲームに携わったか？
+            + contains_cg_design: true (boolean) - デザイナー追加項目/CGに携わったか？
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success resume create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Resumes [/v1/users/:id/resumes/:resume_id]
 
@@ -368,7 +689,62 @@ Cacoo: 22.5, 22.6
 職務経歴を削除する
 
 ### PATCH
-職務経歴を編集する
+職務経歴を編集する <br>
+Cacoo: 16.1~4
+
++ Request (application/json)
+
+    + Attribute
+        + company_name: Peach株式会社 (string) - 会社名
+        + working_style: permanent_staff (enum, required) - 勤務形態
+            + permanent_staff (string) - 正社員
+            + contract_staff (string) - 契約社員
+            + parttime_staff (string) - パート・アルバイト
+            + subcontractor (string) - 業務委託
+        + start_date: 2018/04/01 (string) - 参画開始日
+        + end_date: 2019/03/31 (string) - 参画終了日
+        + industry: it_internet_game (enum, required) - 業界
+            + it_internet_game (string) - IT・インターネット・ゲーム
+            + maker (string) - メーカー
+            + consulting (string) - コンサルティング
+            + logistick (string) - 商社・流通・小売・サービス
+            + advertising (string) - 広告・マスコミ・エンタメ
+            + finance (string) - 金融・不動産・建設
+            + medical (string) - 医薬・医療・メディカル
+            + infrastructure (string) - インフラ・公共・その他
+            + other (string) - その他
+        + position: コンサルタント (string) - 役職、役割
+        + members_count: 5　(number) - チーム人数
+        + project_name: 生産管理システムバージョンアップ支援 (string, required) - プロジェクト/業務名
+        + project_description: Rails化を行いました。 (string) - プロジェクト/業務概要
+        + resume_engineer: (object)
+            + contains_requirement_definition: false (boolean) - エンジニア追加項目/要件定義に携わったか？
+            + contains_basic_design: false (boolean) - エンジニア追加項目/基本設計に携わったか？
+            + contains_detailed_design: false (boolean) - エンジニア追加項目/詳細設計に携わったか？
+            + contains_coding: true (boolean) - エンジニア追加項目/実装に携わったか？
+            + contains_test: true (boolean) - エンジニア追加項目/テストに携わったか？
+            + contains_maintenance: true (boolean) - エンジニア追加項目/保守・運用に携わったか？
+        + resume_designer: (object)
+            + contains_graphic_design: false (boolean) - デザイナー追加項目/グラフィックに携わったか？
+            + contains_ui_ux_design: false (boolean) - デザイナー追加項目/UI/UXに携わったか？
+            + contains_web_design: false (boolean) - デザイナー追加項目/Webに携わったか？
+            + contains_dtp_design: true (boolean) - デザイナー追加項目/DTPに携わったか？
+            + contains_game_design: true (boolean) - デザイナー追加項目/ゲームに携わったか？
+            + contains_cg_design: true (boolean) - デザイナー追加項目/CGに携わったか？
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success resume update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## UsersALL [/v1/users/:id/all]
 
