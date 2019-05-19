@@ -34,16 +34,83 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1
     }
 
 ### PATCH
-User情報を編集する
+User情報を編集する <br>
+Cacoo: 11
+
++ Request (application/json)
+
+    + Attribute
+
+        + first_name: 航 (string) - Userの名
+        + last_name: 菊地 (string) - Userの姓
+        + first_name_kana: わたる (string) - Userの名ふりがな
+        + last_name_kana: きくち (string) - Userの姓ふりがな
+        + sex: male (enum) - Userの性別
+            + male (string) - 男性
+            + female (string) - 女性
+        + birthdate: 1990/01/01 (string) - Userの誕生日
+        + phone_number: `080-1234-5678` (string) - Userの電話番号
+        + email: foo@example.com (string) - Userのメールアドレス
+        + professions: (array)
+            + engineer (string) - Userがエンジニアを希望職種として選択
+            + designer (string) - Userがデザイナーを希望職種として選択
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success user update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## users  [/v1/users/]
 
 ### POST
-Userを追加する
+Userを追加する <br>
+Cacoo: 1.1
 
++ Request (application/json)
+
+    + Attribute
+
+        + first_name: 航 (string, required) - Userの名
+        + last_name: 菊地 (string, required) - Userの姓
+        + first_name_kana: わたる (string, required) - Userの名ふりがな
+        + last_name_kana: きくち (string, required) - Userの姓ふりがな
+        + sex: male (enum, required) - Userの性別
+            + male (string) - 男性
+            + female (string) - 女性
+        + birthdate: 1990/01/01 (string, required) - Userの誕生日
+        + phone_number: `080-1234-5678` (string, required) - Userの電話番号
+        + email: foo@example.com (string, required) - Userのメールアドレス
+        + professions: (array)
+            + engineer (string) - Userがエンジニアを希望職種として選択
+            + designer (string) - Userがデザイナーを希望職種として選択
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success user create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
+
+<!--
 ### DELETE
 Userを削除する
-
+-->
 ## users  [/v1/users/search?utf8=✓&q~]
 
 ### GET
