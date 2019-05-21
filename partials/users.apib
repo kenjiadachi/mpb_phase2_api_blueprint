@@ -414,9 +414,6 @@ Cacoo: 13
 
 ## Skills [/api/v1/skills/:skill_id]
 
-### DELETE
-Skillを削除する
-
 ### PATCH
 Skillを編集する <br>
 Cacoo: 13
@@ -441,6 +438,9 @@ Cacoo: 13
 
         + code: 400 (number)
         + message: Bad Request (string)
+
+### DELETE
+Skillを削除する
 
 ## Hopes [/api/v1/users/:id/hopes]
 
@@ -472,10 +472,7 @@ Cacoo: 14
           "closest_station_name": "四ツ谷駅",
       }
 
-## Hopes[/api/v1/users/:id/hopes/:hope_id]
-
-### DELETE
-Hopeを削除する
+## Hopes[/api/v1/hopes/:hope_id]
 
 ### PATCH
 Hopeを編集する <br>
@@ -514,6 +511,9 @@ Cacoo: 14
 
         + code: 400 (number)
         + message: Bad Request (string)
+
+### DELETE
+Hopeを削除する
 
 ## Educations [/api/v1/users/:id/educations]
 
