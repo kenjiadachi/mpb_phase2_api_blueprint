@@ -472,7 +472,9 @@ Cacoo: 14
           "closest_station_name": "四ツ谷駅",
       }
 
-## Hopes[/api/v1/hopes/:hope_id]
+
+
+## Hopes [/api/v1/hopes/:hope_id]
 
 ### PATCH
 Hopeを編集する <br>
@@ -595,32 +597,32 @@ Cacoo: 22.5, 22.6
           "needs_before_mtg": false
       }
 
-      ### PATCH
-      メール通知設定を編集する <br>
-      Cacoo: 22.5
+### PATCH
+メール通知設定を編集する <br>
+Cacoo: 22.5
 
-      + Request (application/json)
++ Request (application/json)
 
-          + Attribute
-              + needs_when_send_notice: true (boolean, required) - 運営会社からのお知らせ通知メールを受け取る
-              + needs_when_offered: false (boolean, required) - 企業から案件をオファーされた時に通知メールを受け取る
-              + needs_when_favorite_is_changed: false (boolean, required) - お気に入りした案件の情報が変更された時に通知メールを受け取る
-              + needs_when_favorite_is_closed: false (boolean, required) - お気に入りした案件が掲載終了になった時に通知メールを受け取る
-              + needs_before_mtg: false (boolean, required) - 確定した面談日の前日に通知メールを受け取る
+    + Attribute
+        + needs_when_send_notice: true (boolean, required) - 運営会社からのお知らせ通知メールを受け取る
+        + needs_when_offered: false (boolean, required) - 企業から案件をオファーされた時に通知メールを受け取る
+        + needs_when_favorite_is_changed: false (boolean, required) - お気に入りした案件の情報が変更された時に通知メールを受け取る
+        + needs_when_favorite_is_closed: false (boolean, required) - お気に入りした案件が掲載終了になった時に通知メールを受け取る
+        + needs_before_mtg: false (boolean, required) - 確定した面談日の前日に通知メールを受け取る
 
-      + Response 200 (application/json)
++ Response 200 (application/json)
 
-          + Attribute
+    + Attribute
 
-              + code: 200 (number)
-              + message: Success user_mail_alert update (string)
+        + code: 200 (number)
+        + message: Success user_mail_alert update (string)
 
-      + Response 400 (application/json)
++ Response 400 (application/json)
 
-          + Attribute
+    + Attribute
 
-              + code: 400 (number)
-              + message: Bad Request (string)
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Resumes [/api/v1/users/:id/resumes]
 
