@@ -18,7 +18,7 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
   + Body
 
     {
-        "id": 1,
+        "id": "98296425-f344-46ec-bebd-e91f05620bb8",
         "name": "菊地 航",
         "first_name": "航",
         "last_name": "菊地",
@@ -30,7 +30,10 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
         "age": 24,
         "phone_number": "080-1234-5678",
         "email": "foo@example.com",
-        "skill_remark": "秘書検定2級"
+        "skill_remark": "秘書検定2級",
+        "closest_station": "丸ノ内線 四ツ谷駅",
+        "closest_station_line": "丸ノ内線",
+        "closest_station_name": "四ツ谷駅",
     }
 
 ### PATCH
@@ -51,6 +54,8 @@ Cacoo: 11
         + birthdate: 1990/01/01 (string) - 誕生日
         + phone_number: `080-1234-5678` (string) - 電話番号
         + email: foo@example.com (string) - メールアドレス
+        + closest_station_line: 丸ノ内線 (string) - 最寄駅の路線
+        + closest_station_name: 四ツ谷駅 (string) - 最寄駅の駅名
 
 + Response 200 (application/json)
 
@@ -86,6 +91,8 @@ Cacoo: 1.1
         + birthdate: 1990/01/01 (string, required) - 誕生日
         + phone_number: `080-1234-5678` (string, required) - 電話番号
         + email: foo@example.com (string, required) - メールアドレス
+        + closest_station_line: 丸ノ内線 (string) - 最寄駅の路線
+        + closest_station_name: 四ツ谷駅 (string) - 最寄駅の駅名
 
 + Response 200 (application/json)
 
@@ -127,7 +134,7 @@ ransack使用予定。APIで使用したことないので少し調べてから�
 
     [
         {
-            "id": 1,
+            "id": "98296425-f344-46ec-bebd-e91f05620bb8",
             "display_name": "DH280",
             "age": 32,
             "sex": "男性",
@@ -135,7 +142,7 @@ ransack使用予定。APIで使用したことないので少し調べてから�
             "professions": ["エンジニア"],
         },
         {
-            "id": 2,
+            "id": "98296425-f344-46ec-bebd-e91f05620bb5",
             "display_name": "DH281",
             "age": 22,
             "sex": "女性",
@@ -457,7 +464,7 @@ Cacoo: 14
   + Body
       {
           "id": 1,
-          "user_id": 1,
+          "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
           "professions": ["エンジニア", "デザイナー", "営業", "事務"],
           "min_price": 300000,
           "max_price": 1000000,
@@ -467,9 +474,6 @@ Cacoo: 14
           "holiday": "土日祝",
           "appeal_point": "私は天才です",
           "comment": "すごい人です！",
-          "closest_station": "丸ノ内線 四ツ谷駅",
-          "closest_station_line": "丸ノ内線",
-          "closest_station_name": "四ツ谷駅",
       }
 
 
@@ -589,7 +593,7 @@ Cacoo: 22.5, 22.6
   + Body
       {
           "id": 1,
-          "user_id": 1,
+          "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
           "needs_when_send_notice": true,
           "needs_when_offered": false,
           "needs_when_favorite_is_changed": false,
@@ -767,7 +771,7 @@ Cacoo: 10, 10.5, 33, 33.1
   + Body
 
     {
-        "id": 1,
+        "id": "98296425-f344-46ec-bebd-e91f05620bb8",
         "name": "菊地 航",
         "first_name": "航",
         "last_name": "菊地",
@@ -780,6 +784,9 @@ Cacoo: 10, 10.5, 33, 33.1
         "phone_number": "080-1234-5678",
         "email": "foo@example.com",
         "skill_remark": "秘書検定2級",
+        "closest_station": "丸ノ内線 四ツ谷駅",
+        "closest_station_line": "丸ノ内線",
+        "closest_station_name": "四ツ谷駅",
         "skills": [
             {
                 "years_count": 3,
@@ -792,7 +799,7 @@ Cacoo: 10, 10.5, 33, 33.1
         ],
         "hope" {
             "id": 1,
-            "user_id": 1,
+            "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
             "professions": ["エンジニア", "デザイナー", "営業", "事務"],
             "min_price": 300000,
             "max_price": 1000000,
@@ -802,14 +809,11 @@ Cacoo: 10, 10.5, 33, 33.1
             "holiday": "土日祝",
             "appeal_point": "私は天才です",
             "comment": "すごい人です！",
-            "closest_station": "丸ノ内線 四ツ谷駅",
-            "closest_station_line": "丸ノ内線",
-            "closest_station_name": "四ツ谷駅"
         },
         "lisenses": [
             {
                 "id": 1,
-                "user_id": 1,
+                "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
                 "get_date": "2019/01/01",
                 "name": "応用情報技術者"
             },
@@ -823,7 +827,7 @@ Cacoo: 10, 10.5, 33, 33.1
         "portfolios": [
             {
                 "id": 1,
-                "user_id": 1,
+                "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
                 "image": "http://placehold.jp/150x150.png",
                 "title": "社会人用留学斡旋会社のwebサイトデザイン",
                 "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
@@ -834,7 +838,7 @@ Cacoo: 10, 10.5, 33, 33.1
             },
             {
                 "id": 2,
-                "user_id": 1,
+                "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
                 "image": "http://placehold.jp/150x150.png",
                 "title": "金融系アプリのwebサイトデザイン",
                 "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
