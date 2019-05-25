@@ -71,6 +71,9 @@ Cacoo: 11
         + code: 400 (number)
         + message: Bad Request (string)
 
+### DELETE
+Userを削除する
+
 ## Users  [/api/v1/users/]
 
 ### POST
@@ -108,9 +111,6 @@ Cacoo: 1.1
         + code: 400 (number)
         + message: Bad Request (string)
 
-### DELETE
-Userを削除する
-
 ## Users  [/api/v1/users/search]
 
 ### GET
@@ -124,9 +124,6 @@ ransack使用予定。APIで使用したことないので少し調べてから�
 
     + Request (application/json)
         + Attribute
-
-
-
 
 + Response 200 (application/json)
 
@@ -151,7 +148,7 @@ ransack使用予定。APIで使用したことないので少し調べてから�
         },
     ]
 
-## Portfolios [/api/v1/users/:id/portfolios/]
+## Portfolios [/api/v1/users/:user_id/portfolios/]
 
 ### GET
 userにひもづく、全てのportfolioを取得する <br>
@@ -234,7 +231,7 @@ Cacoo: 13.5
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Portfolios [/api/v1/users/:user_id/portfolios/:portfolio_id]
+## Portfolios [/api/v1/users/:user_id/portfolios/:id]
 
 ### PATCH
 portfolioを編集する <br>
@@ -282,7 +279,7 @@ Cacoo: 13.5
 portfolioを削除する
 
 
-## Licenses [/api/v1/users/:id/licenses]
+## Licenses [/api/v1/users/:user_id/licenses]
 
 ### GET
 userにひもづく、全てのLicenseの情報を取得する <br>
@@ -337,7 +334,7 @@ Cacoo: 12
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Licenses [/api/v1/users/:user_id/licenses/:license_id]
+## Licenses [/api/v1/users/:user_id/licenses/:id]
 
 ### DELETE
 Licenseを削除する
@@ -394,6 +391,10 @@ Cacoo: 13, 24.0~24.5, 25
           ]
       }
 
+
+
+## Skills [/api/v1/users/:user_id/skills/:id]
+
 ### POST
 Skillを追加する <br>
 Cacoo: 13
@@ -402,7 +403,6 @@ Cacoo: 13
 
     + Attribute
 
-        + name: Java (string, required) - skillの名前
         + years_count: 2 (number, required) - skillの経験年数
 
 + Response 200 (application/json)
@@ -419,37 +419,10 @@ Cacoo: 13
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Skills [/api/v1/users/:user_id/skills/:skill_id]
-
-### PATCH
-Skillを編集する <br>
-Cacoo: 13
-
-+ Request (application/json)
-
-    + Attribute
-
-        + name: Java (string) - skill名
-        + years_count: 2 (number) - 経験年数
-
-+ Response 200 (application/json)
-
-    + Attribute
-
-        + code: 200 (number)
-        + message: Success skill update (string)
-
-+ Response 400 (application/json)
-
-    + Attribute
-
-        + code: 400 (number)
-        + message: Bad Request (string)
-
 ### DELETE
 Skillを削除する
 
-## Hopes [/api/v1/users/:id/hopes]
+## Hopes [/api/v1/users/:user_id/hopes]
 
 ### GET
 userにひもづく、Hopeの情報を取得する <br>
@@ -459,26 +432,8 @@ Cacoo: 14
   + Headers
     Content-Type: application/json
 
-+ Response 200 (application/json)
 
-  + Body
-      {
-          "id": 1,
-          "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
-          "professions": ["エンジニア", "デザイナー", "営業", "事務"],
-          "min_price": 300000,
-          "max_price": 1000000,
-          "scheduled_start_date": "2019/10/10",
-          "activable_count": 3,
-          "residable_count": 2,
-          "holiday": "土日祝",
-          "appeal_point": "私は天才です",
-          "comment": "すごい人です！",
-      }
-
-
-
-## Hopes [/api/v1/users/:user_id/hopes/:hope_id]
+## Hopes [/api/v1/users/:user_id/hopes/:id]
 
 ### PATCH
 Hopeを編集する <br>
@@ -518,8 +473,6 @@ Cacoo: 14
         + code: 400 (number)
         + message: Bad Request (string)
 
-### DELETE
-Hopeを削除する
 
 ## Educations [/api/v1/users/:id/educations]
 
@@ -548,7 +501,7 @@ Cacoo: 15
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Educations [/api/v1/users/:user_id/educations/:education_id]
+## Educations [/api/v1/users/:user_id/educations/:id]
 
 ### DELETE
 Educationを削除する
@@ -688,7 +641,7 @@ Cacoo: 16.1~4
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Resumes [/api/v1/users/:user_id/resumes/:resume_id]
+## Resumes [/api/v1/users/:user_id/resumes/:id]
 
 ### DELETE
 職務経歴を削除する
