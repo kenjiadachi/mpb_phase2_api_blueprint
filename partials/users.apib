@@ -26,7 +26,7 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
         "last_name_kana": "きくち",
         "display_name": "DH280",
         "sex": "男性",
-        "birthdate": "1990/01/01"
+        "birthdate": "1990/01/01",
         "age": 24,
         "phone_number": "080-1234-5678",
         "email": "foo@example.com",
@@ -94,8 +94,11 @@ Cacoo: 1.1
         + birthdate: 1990/01/01 (string, required) - 誕生日
         + phone_number: `080-1234-5678` (string, required) - 電話番号
         + email: foo@example.com (string, required) - メールアドレス
-        + closest_station_line: 丸ノ内線 (string) - 最寄駅の路線
-        + closest_station_name: 四ツ谷駅 (string) - 最寄駅の駅名
+        + jobList: (object) - 複数選択の職業
+            + engineer: true (boolean, required) - エンジニア
+            + designer: true (boolean, required) - デザイナー
+            + sales: false (boolean, required) - 営業
+            + office: false (boolean, required) - 事務
 
 + Response 200 (application/json)
 
@@ -116,14 +119,17 @@ Cacoo: 1.1
 ### GET
 userの検索を行います <br>
 Cacoo: 32 <br>
-ransack使用予定。APIで使用したことないので少し調べてから追記します。
 
 + Request
     + Headers
         Content-Type: application/json
 
-    + Request (application/json)
-        + Attribute
+    + Attribute
+        + q: (object)
+            + skills_name_cont: (array)
+                + C
+            + hope_professions_name_cont: (array)
+                + エンジニア
 
 + Response 200 (application/json)
 
