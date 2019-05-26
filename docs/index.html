@@ -11,8 +11,8 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
     "<span class="hljs-attribute">last_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"きくち"</span></span>,
     "<span class="hljs-attribute">display_name</span>": <span class="hljs-value"><span class="hljs-string">"DH280"</span></span>,
     "<span class="hljs-attribute">sex</span>": <span class="hljs-value"><span class="hljs-string">"男性"</span></span>,
-    "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990/01/01"</span>
-    <span class="hljs-string">"age"</span>: <span class="hljs-number">24</span></span>,
+    "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990/01/01"</span></span>,
+    "<span class="hljs-attribute">age</span>": <span class="hljs-value"><span class="hljs-number">24</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
     "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
     "<span class="hljs-attribute">skill_remark</span>": <span class="hljs-value"><span class="hljs-string">"秘書検定2級"</span></span>,
@@ -121,8 +121,12 @@ Cacoo: 1.1</p>
   "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990/01/01"</span></span>,
   "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
   "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
-  "<span class="hljs-attribute">closest_station_line</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線"</span></span>,
-  "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value"><span class="hljs-string">"四ツ谷駅"</span>
+  "<span class="hljs-attribute">jobList</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">engineer</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">designer</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">sales</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">office</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+  </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -163,13 +167,33 @@ Cacoo: 1.1</p>
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"メールアドレス"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">closest_station_line</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"最寄駅の路線"</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"最寄駅の駅名"</span>
+    "<span class="hljs-attribute">jobList</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">engineer</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"エンジニア"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">designer</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"デザイナー"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">sales</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"営業"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">office</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"事務"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"engineer"</span>,
+        <span class="hljs-string">"designer"</span>,
+        <span class="hljs-string">"sales"</span>,
+        <span class="hljs-string">"office"</span>
+      ]</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"複数選択の職業"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -211,9 +235,33 @@ Cacoo: 1.1</p>
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="user周り-users-2" class="resource"><h3 class="resource-heading">Users <a href="#user周り-users-2" class="permalink">&nbsp;&para;</a></h3><div id="user周り-users-get-1" class="action get"><h4 class="action-heading"><div class="name"></div><a href="#user周り-users-get-1" class="method get">GET</a><code class="uri">/api/v1/users/search</code></h4><p>userの検索を行います <br>
-Cacoo: 32 <br>
-ransack使用予定。APIで使用したことないので少し調べてから追記します。</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/search</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
+Cacoo: 32 <br></p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/search</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">q</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">skills_name_cont</span>": <span class="hljs-value">[
+      <span class="hljs-string">"C"</span>
+    ]</span>,
+    "<span class="hljs-attribute">hope_professions_name_cont</span>": <span class="hljs-value">[
+      <span class="hljs-string">"エンジニア"</span>
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">q</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">skills_name_cont</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">hope_professions_name_cont</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
     {
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"98296425-f344-46ec-bebd-e91f05620bb8"</span></span>,
         "<span class="hljs-attribute">display_name</span>": <span class="hljs-value"><span class="hljs-string">"DH280"</span></span>,
@@ -1311,7 +1359,7 @@ Cacoo: 10, 10.5, 33, 33.1</p>
         }
     ]
 
-}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 25 May 2019</p><script>/* eslint-env browser */
+}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 26 May 2019</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
