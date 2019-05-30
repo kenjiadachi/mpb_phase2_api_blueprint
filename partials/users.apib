@@ -25,7 +25,7 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
         "first_name_kana": "わたる",
         "last_name_kana": "きくち",
         "display_name": "DH280",
-        "sex": "male",
+        "sex": "男性",
         "birthdate": "1990/01/01",
         "age": 24,
         "phone_number": "080-1234-5678",
@@ -171,24 +171,22 @@ Cacoo: 13.5
       [
           {
               "id": 1,
-              "user_id": 1,
               "image": "http://placehold.jp/150x150.png",
               "title": "社会人用留学斡旋会社のwebサイトデザイン",
               "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
               "start_date": "2019/01/01",
               "end_date": "2019/03/01",
-              "price": "500,000",
+              "price": "1万円〜2万円",
               "url": "http://example.com/"
           },
           {
               "id": 2,
-              "user_id": 1,
               "image": "http://placehold.jp/150x150.png",
               "title": "金融系アプリのwebサイトデザイン",
               "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
               "start_date": "2019/01/01",
               "end_date": "2019/03/01",
-              "price": "500,000",
+              "price": "1万円〜2万円",
               "url": "http://example.com/"
           }
       ]
@@ -301,14 +299,12 @@ Cacoo: 12
 
       [
           {
-              "id": 1,
-              "user_id": 1,
+              "id": 2
               "get_date": "2019/01/01",
               "name": "応用情報技術者"
           },
           {
-              "id": 2,
-              "user_id": 1,
+              "id": 3
               "get_date": "2019/02/01",
               "name": "基本情報技術者"
           }
@@ -384,18 +380,18 @@ Cacoo: 13, 24.0~24.5, 25
 + Response 200 (application/json)
 
   + Body
-      {
-          "skills": [
-              {
-                  "years_count": 3,
-                  "name": "Java",
-              },
-              {
-                  "years_count": 5,
-                  "name": "C++",
-              }
-          ]
-      }
+      [
+          {
+              "skill_id": 35,
+              "years_count": 3,
+              "name": "Java",
+          },
+          {
+              "skill_id": 36,
+              "years_count": 5,
+              "name": "C++",
+          }
+      ]
 
 
 
@@ -437,6 +433,21 @@ Cacoo: 14
 + Request
   + Headers
     Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+      {
+          "professions": ["エンジニア", "デザイナー"],
+          "min_price": 300000,
+          "max_price": 1000000,
+          "scheduled_start_date": "2019-10-10",
+          "activable_count": 3,
+          "residable_count": 2,
+          "holiday": "土日祝",
+          "appeal_point": "私は天才です",
+          "comment": "すごい人です！"
+      }
 
 
 ## Hopes [/api/v1/users/:user_id/hopes/:id]
@@ -537,7 +548,7 @@ Cacoo: 15
         + code: 400 (number)
         + message: Bad Request (string)
 
-## UserMailAlerts [/api/v1/users/:id/mail_alert]
+## UserMailAlerts [/api/v1/users/:user_id/mail_alert]
 
 ### GET
 メール通知設定を取得する <br>
@@ -552,7 +563,6 @@ Cacoo: 22.5, 22.6
   + Body
       {
           "id": 1,
-          "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
           "needs_when_send_notice": true,
           "needs_when_offered": false,
           "needs_when_favorite_is_changed": false,
@@ -758,7 +768,6 @@ Cacoo: 10, 10.5, 33, 33.1
         ],
         "hope" {
             "id": 1,
-            "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
             "professions": ["エンジニア", "デザイナー", "営業", "事務"],
             "min_price": 300000,
             "max_price": 1000000,
@@ -772,13 +781,11 @@ Cacoo: 10, 10.5, 33, 33.1
         "lisenses": [
             {
                 "id": 1,
-                "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
                 "get_date": "2019/01/01",
                 "name": "応用情報技術者"
             },
             {
                 "id": 2,
-                "user_id": 1,
                 "get_date": "2019/02/01",
                 "name": "基本情報技術者"
             }
@@ -786,24 +793,22 @@ Cacoo: 10, 10.5, 33, 33.1
         "portfolios": [
             {
                 "id": 1,
-                "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
                 "image": "http://placehold.jp/150x150.png",
                 "title": "社会人用留学斡旋会社のwebサイトデザイン",
                 "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
                 "start_date": "2019/01/01",
                 "end_date": "2019/03/01",
-                "price": "500,000",
+                "price": "30万円〜50万円",
                 "url": "http://example.com/"
             },
             {
                 "id": 2,
-                "user_id": "98296425-f344-46ec-bebd-e91f05620bb8",
                 "image": "http://placehold.jp/150x150.png",
                 "title": "金融系アプリのwebサイトデザイン",
                 "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
                 "start_date": "2019/01/01",
                 "end_date": "2019/03/01",
-                "price": "500,000",
+                "price": "1万円〜2万円",
                 "url": "http://example.com/"
             }
         ]
