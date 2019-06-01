@@ -1,37 +1,78 @@
-<!--
 # Group Company周り
-CompanyとCompanyが持つ情報(Project)
+CompanyとCompanyが持つ情報(Project, Staff, ContractStyle, Position, Phase, SkillCategory)周りをまとめています。
 
 ## Companies [/v1/company]
 
 ### POST
-企業を作成する
+企業を作成する <br>
+Cacoo: 1.3
 
++ Request (application/json)
 
-## Companies [/v1/company/:company_id/name]
+    + Attribute
 
-### GET
-企業名を取得する <br>
-Cacoo: 24~29.6<br>
-ナビバーの吹き出し用
+        + name: Peach株式会社 (string, required) - 会社名
+        + postal_code: 123-4567 (string, required) - 郵便番号
+        + address: 東京都千代田区丸の内1-8-3 (string, required) - 住所
+        + url: http://example.com/ (string, required) - 会社URL
+        + phone_number: 03-1234-5678 (string, required) - 会社電話番号
+        + staff_attributes: (object) - スタッフ情報
+            + first_name: 航 (string, required) - 名
+            + last_name: 菊地 (string, required) - 姓
+            + phone_number: 080-1234-5678 (string, required) - 担当者電話番号
+            + email: staff@example.com (string, required) - 担当者電話番号
 
-+ Request
-  + Headers
-    Content-Type: application/json
 
 + Response 200 (application/json)
 
-  + Body
+    + Attribute
 
-      {
-            "name": "Peach株式会社"
-      }
+        + code: 200 (number)
+        + message: Success user create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 
 ## Staffs [/v1/staffs/:staff_id]
 
 ### PATCH
-スタッフ情報を編集する
+スタッフ情報を編集する <br>
+Cacoo: 22, 22.6
+
++ Request (application/json)
+
+    + Attribute
+
+        + first_name: 航 (string, required) - 名
+        + last_name: 菊地 (string, required) - 姓
+        + phone_number: 080-1234-5678 (string, required) - 担当者電話番号
+        + email: staff@example.com (string, required) - 担当者電話番号
+        + staff_mail_alert_attributes: (object) - スタッフ情報
+            + needs_when_threads_is_created: true (boolean, required) - メッセージスレッドが作成された時に通知メールを受け取る
+            + needs_when_threads_is_deleted: true (boolean, required) - メッセージスレッドが削除された時に通知メールを受け取る
+            + needs_when_favorite_is_changed: true (boolean, required) - お気に入りした人材の情報が変更された時に通知メールを受け取る
+            + needs_when_favorite_is_hired: true (boolean, required) - お気に入りした人材が他案件で決定した時に通知メールを受け取る
+            + needs_before_mtg: true (boolean, required) - 確定した面談日の前日に通知メールを受け取る
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success user create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
+
 
 ## Projects [/v1/company/:company_id/projects]
 
@@ -81,7 +122,9 @@ Cacoo: 26, 27, 29.5
             "min_mtg_count": 1,
             "max_mtg_count": 3,
             "remarks": "特にありません。",
-            "is_opened": false
+            "is_opened": false,
+            "preferred_skills": ["C", "Ruby"],
+            "required_skills": ["PowerPoint", "C++"]
         },
         {
             "id": 1,
@@ -96,8 +139,8 @@ Cacoo: 26, 27, 29.5
             "max_price-": 4000,
             "closest_stations_line": "丸ノ内線",
             "closest_stations_name": "東京駅",
-            "start_date": "2019/01/01",
-            "end_date": "2019/02/01",
+            "start_date": "2019-01-01",
+            "end_date": "2019-02-01",
             "holiday": "土日祝",
             "scheduled_hour_count": 180,
             "skill_details": "【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル",
@@ -116,12 +159,124 @@ Cacoo: 26, 27, 29.5
             "min_mtg_count": 1,
             "max_mtg_count": 3,
             "remarks": "特にありません。",
-            "is_opened": false
+            "is_opened": false,
+            "preferred_skills": ["C", "Ruby"],
+            "required_skills": ["PowerPoint", "C++"]
         }
     ]
 
 ### POST
-案件を新規作成する
+案件を新規作成する <br>
+Cacoo: 26
+
++ Request (application/json)
+
+    + Attribute
+        + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
+        + preferred_skills: (array)
+            + C (string)
+            + Ruby (string)
+        + required_skills: (array)
+            + C (string)
+            + Ruby (string)
+        + skill_categories: (array) - スキルカテゴリ
+            + `システム開発(Web/スマホ)` (string)
+            + `システム開発(ゲーム)` (string)
+            + `システム開発(業務系)` (string)
+            + `システム開発(OPEN)` (string)
+            + `システム開発(汎用)` (string)
+            + `システム開発(制御・組込)` (string)
+            + `インフラエンジニア` (string)
+            + `デザイン` (string)
+            + `ディレクション` (string)
+            + `営業` (string)
+            + `事務` (string)
+        + phases: (array) - 担当工程
+            + 要求分析 (string)
+            + 要件定義 (string)
+            + 基本設計 (string)
+            + 詳細設計 (string)
+            + コーディング (string)
+            + コードレビュー (string)
+            + 単体テスト (string)
+            + 結合テスト (string)
+            + システムテスト (string)
+            + 受け入れテスト (string)
+        + positions: (array) - ポジション
+            + コンサルタント (string)
+            + `プロジェクトマネージャー(PM/PMO)` (string)
+            + `プロジェクトリーダー(PL)` (string)
+            + `システムエンジニア(SE)` (string)
+            + `プログラマ(PG)` (string)
+            + テスター (string)
+            + 保守/運用 (string)
+            + Webデザイナー (string)
+            + イラストレーター (string)
+            + プランナー (string)
+            + ディレクター (string)
+            + DBA (string)
+            + ヘルプデスク (string)
+            + 事務 (string)
+            + 営業 (string)
+        + start_date: `2019-01-01` - 開始日
+        + end_date: `2019-04-01` - 終了日
+        + holiday: (enum, required) - 休日
+            + weekends_and_holidays (string) - 土日祝
+            + weekdays (string) - 平日
+            + any_time (string) - 曜日を問わない
+        + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
+        + min_working_date_count: 3 (number) - 最低稼働日数
+        + is_remotable: true (boolean, required) - リモート可
+        + is_dressable: true (boolean, required) - 服装自由
+        + is_newbiable: true (boolean, required) - 未経験OK
+        + exists_travel_cost: true (boolean, required) - 交通費支給
+        + is_flex: true (boolean, required) - フレックス制
+        + contract_styles: (array) - 契約形態
+            + 正社員 (string)
+            + 契約社員 (string)
+            + パート・アルバイト (string)
+            + 業務委託 (string)
+        + closest_station_line: 丸ノ内線 (string)
+        + closest_station_name: 東京駅 (string)
+        + unit: (enum, required) - 単価の単位
+            + hourly (string) - 時給
+            + monthly (string) - 月収
+            + yearly (string) - 年収
+        + min_price: 2000 (number) - 最低価格
+        + max_price: 3000 (number) - 最高価格
+        + min_personnel: 3 (number) - 最低募集人数
+        + max_personnel: 5 (number) - 最高募集人数
+        + min_mtg_count: 1 (number) - 最低面談回数
+        + max_mtg_count: 3 (number) - 最高面談回数
+        + remark: 特にありません。 (string) - 備考
+        + needed_skill: 【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル (string) - スキル詳細
+        + work_content: 開発のお仕事です。 (string) - 作業内容
+        + industry:  (enum) - 業界
+            + it_internet_game (string) - IT・インターネット・ゲーム
+            + maker (string) - メーカー
+            + consulting (string) - コンサルティング
+            + logistick (string) - 商社・流通・小売・サービス
+            + advertising (string) - 広告・マスコミ・エンタメ
+            + finance (string) - 金融・不動産・建設
+            + medical (string) - 医薬・医療・メディカル
+            + infrastructure (string) - インフラ・公共・その他
+            + other (string) - その他
+        + min_settlement_hour: 30 (number) - 最低精算基準時間
+        + max_settlement_hour: 50 (number) - 最高精算基準時間
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success user create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 
 ## Projects [/v1/company/:company_id/projects/:project_id]
@@ -175,12 +330,125 @@ Cacoo: 31
       }
 
 ### PATCH
-案件情報を編集する
+案件情報を編集する <br>
+Cacoo: 26
+
++ Request (application/json)
+
+    + Attribute
+
+        + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
+        + preferred_skills: (array)
+            + C (string)
+            + Ruby (string)
+        + required_skills: (array)
+            + C (string)
+            + Ruby (string)
+        + skill_categories: (array) - スキルカテゴリ
+            + `システム開発(Web/スマホ)` (string)
+            + `システム開発(ゲーム)` (string)
+            + `システム開発(業務系)` (string)
+            + `システム開発(OPEN)` (string)
+            + `システム開発(汎用)` (string)
+            + `システム開発(制御・組込)` (string)
+            + `インフラエンジニア` (string)
+            + `デザイン` (string)
+            + `ディレクション` (string)
+            + `営業` (string)
+            + `事務` (string)
+        + phases: (array) - 担当工程
+            + 要求分析 (string)
+            + 要件定義 (string)
+            + 基本設計 (string)
+            + 詳細設計 (string)
+            + コーディング (string)
+            + コードレビュー (string)
+            + 単体テスト (string)
+            + 結合テスト (string)
+            + システムテスト (string)
+            + 受け入れテスト (string)
+        + positions: (array) - ポジション
+            + コンサルタント (string)
+            + `プロジェクトマネージャー(PM/PMO)` (string)
+            + `プロジェクトリーダー(PL)` (string)
+            + `システムエンジニア(SE)` (string)
+            + `プログラマ(PG)` (string)
+            + テスター (string)
+            + 保守/運用 (string)
+            + Webデザイナー (string)
+            + イラストレーター (string)
+            + プランナー (string)
+            + ディレクター (string)
+            + DBA (string)
+            + ヘルプデスク (string)
+            + 事務 (string)
+            + 営業 (string)
+        + start_date: `2019-01-01` - 開始日
+        + end_date: `2019-04-01` - 終了日
+        + holiday: (enum, required) - 休日
+            + weekends_and_holidays (string) - 土日祝
+            + weekdays (string) - 平日
+            + any_time (string) - 曜日を問わない
+        + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
+        + min_working_date_count: 3 (number) - 最低稼働日数
+        + is_remotable: true (boolean, required) - リモート可
+        + is_dressable: true (boolean, required) - 服装自由
+        + is_newbiable: true (boolean, required) - 未経験OK
+        + exists_travel_cost: true (boolean, required) - 交通費支給
+        + is_flex: true (boolean, required) - フレックス制
+        + contract_styles: (array) - 契約形態
+            + 正社員 (string)
+            + 契約社員 (string)
+            + パート・アルバイト (string)
+            + 業務委託 (string)
+        + closest_station_line: 丸ノ内線 (string)
+        + closest_station_name: 東京駅 (string)
+        + unit: (enum, required) - 単価の単位
+            + hourly (string) - 時給
+            + monthly (string) - 月収
+            + yearly (string) - 年収
+        + min_price: 2000 (number) - 最低価格
+        + max_price: 3000 (number) - 最高価格
+        + min_personnel: 3 (number) - 最低募集人数
+        + max_personnel: 5 (number) - 最高募集人数
+        + min_mtg_count: 1 (number) - 最低面談回数
+        + max_mtg_count: 3 (number) - 最高面談回数
+        + remark: 特にありません。 (string) - 備考
+        + needed_skill: 【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル (string) - スキル詳細
+        + work_content: 開発のお仕事です。 (string) - 作業内容
+        + industry:  (enum) - 業界
+            + it_internet_game (string) - IT・インターネット・ゲーム
+            + maker (string) - メーカー
+            + consulting (string) - コンサルティング
+            + logistick (string) - 商社・流通・小売・サービス
+            + advertising (string) - 広告・マスコミ・エンタメ
+            + finance (string) - 金融・不動産・建設
+            + medical (string) - 医薬・医療・メディカル
+            + infrastructure (string) - インフラ・公共・その他
+            + other (string) - その他
+        + min_settlement_hour: 30 (number) - 最低精算基準時間
+        + max_settlement_hour: 50 (number) - 最高精算基準時間
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success user create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ### DELETE
 案件を削除する
 
-## Projects  [/v1/projects/search?utf8=✓&q~]
+
+
+## Projects  [/v1/projects/search]
 
 ### GET
 projectの検索を行います <br>
@@ -221,22 +489,95 @@ Cacoo: 30
         }
     ]
 
-## Offers [/v1/projects/:project_id/offers]
+
+<!--
+## Offers [/v1/companies/:company_id/projects/:project_id/offers]
 
 ### GET
-案件について、オファーした人材一覧を取得する
+案件について、オファー一覧を取得する <br>
+Cacoo: 23
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": 1,
+            "mtg_datetime": "2019-10-01 10:00",
+            "user": {
+                "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                "name": "山田 花子",
+            }
+            "status": "未着手",
+        },
+        {
+            "id": 2,
+            "mtg_datetime": "2019-10-01 10:00",
+            "user": {
+                "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                "name": "山田 花子",
+            }
+            "status": "未着手",
+        }
+    ]
+
+
+## Offers [/v1/companies/:company_id/projects/:project_id/:user_id/offer]
 
 ### POST
 人材へのオファーを行う
-paramsとして、userが必要です
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success offer create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Offers [/v1/projects/:project_id/offers/:offer_id]
 
 ### PATCH
 オファー内容を編集(面談日時の入力など)する
 
++ Request (application/json)
+
+    + Attribute
+
+        + mtg_date: "2019-10-01 10:00" (string) - 面談日時
+
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success user create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
+
 ### DELETE
 オファーを削除する
+
+
 
 
 ## Favorables [/v1/companies/:id/favorables]
