@@ -128,8 +128,10 @@ Cacoo: 32 <br>
         + q: (object)
             + skills_name_cont: (array)
                 + C
+                + Ruby
             + hope_professions_name_cont: (array)
                 + エンジニア
+                + デザイナー
 
 + Response 200 (application/json)
 
@@ -459,22 +461,18 @@ Cacoo: 14
 + Request (application/json)
 
     + Attribute
-        + professions: (array)
-            + エンジニア (string) - エンジニアを希望職種として選択
-            + デザイナー (string) - デザイナーを希望職種として選択
-            + 営業 (string) - 営業を希望職種として選択
-            + 事務 (string) - 事務を希望職種として選択
+        + profession_ids: (array)
+            + 1 (number) - 職種マスタのID
+            + 2 (number) - 職種マスタのID
+            + 3 (number) - 職種マスタのID
         + min_price: 300000 (number) - 最低希望価格
         + max_price: 1000000 (number) - 最高希望価格
         + scheduled_start_date: 2019/10/10 (string) - 稼働開始可能日
         + activable_count: 3 (number) - 1週間のうち働ける日数
         + residable_count: 2 (number) - 1週間のうち常駐できる日数
-        + holiday: weekends_and_holidays (enum, required) - 休日の希望
-            + weekends_and_holidays (string) - 土日祝
-            + weekdays (string) - 平日
-            + any_time (string) - 曜日を問わない
         + appeal_point: 私は天才です (string) - アピールポイント
         + comment: すごい人です！ (string) - 担当コンサルタントからのコメント
+        + holiday_id: 1 (number) - 休日のマスタID
 
 + Response 200 (application/json)
 
@@ -607,23 +605,10 @@ Cacoo: 16.1~4
 
     + Attribute
         + company_name: Peach株式会社 (string) - 会社名
-        + working_style: permanent_staff (enum, required) - 勤務形態
-            + permanent_staff (string) - 正社員
-            + contract_staff (string) - 契約社員
-            + parttime_staff (string) - パート・アルバイト
-            + subcontractor (string) - 業務委託
+        + contract_style_id: 1 (number) - 雇用形態マスタのID
         + start_date: 2018/04/01 (string) - 参画開始日
         + end_date: 2019/03/31 (string) - 参画終了日
-        + industry: it_internet_game (enum, required) - 業界
-            + it_internet_game (string) - IT・インターネット・ゲーム
-            + maker (string) - メーカー
-            + consulting (string) - コンサルティング
-            + logistick (string) - 商社・流通・小売・サービス
-            + advertising (string) - 広告・マスコミ・エンタメ
-            + finance (string) - 金融・不動産・建設
-            + medical (string) - 医薬・医療・メディカル
-            + infrastructure (string) - インフラ・公共・その他
-            + other (string) - その他
+        + industry_id: 3　(number) - 業界マスタのID
         + position: コンサルタント (string) - 役職、役割
         + members_count: 5　(number) - チーム人数
         + project_name: 生産管理システムバージョンアップ支援 (string, required) - プロジェクト/業務名
@@ -670,23 +655,10 @@ Cacoo: 16.1~4
 
     + Attribute
         + company_name: Peach株式会社 (string) - 会社名
-        + working_style: permanent_staff (enum, required) - 勤務形態
-            + permanent_staff (string) - 正社員
-            + contract_staff (string) - 契約社員
-            + parttime_staff (string) - パート・アルバイト
-            + subcontractor (string) - 業務委託
+        + contract_style_id: 3 - 契約形態マスタのID
         + start_date: 2018/04/01 (string) - 参画開始日
         + end_date: 2019/03/31 (string) - 参画終了日
-        + industry: it_internet_game (enum, required) - 業界
-            + it_internet_game (string) - IT・インターネット・ゲーム
-            + maker (string) - メーカー
-            + consulting (string) - コンサルティング
-            + logistick (string) - 商社・流通・小売・サービス
-            + advertising (string) - 広告・マスコミ・エンタメ
-            + finance (string) - 金融・不動産・建設
-            + medical (string) - 医薬・医療・メディカル
-            + infrastructure (string) - インフラ・公共・その他
-            + other (string) - その他
+        + industry_id: 4 - 業界マスタのID
         + position: コンサルタント (string) - 役職、役割
         + members_count: 5　(number) - チーム人数
         + project_name: 生産管理システムバージョンアップ支援 (string, required) - プロジェクト/業務名

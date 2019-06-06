@@ -1,0 +1,98 @@
+# Group 各種マスタ
+マスタデータをまとめて取得するAPIをまとめています。
+
+## Skills [/api/v1/skills]
+
+### GET
+使用可能なツール、言語、フレームワークなどを全てまとめたもの
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "C"
+        },
+        {
+            "id": "2",
+            "name": "デザイナー"
+        }
+    ]
+
+## Professions [/api/v1/professions]
+
+### GET
+専門性(エンジニア、デザイナー、営業、事務)
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "エンジニア"
+        },
+        {
+            "id": "2",
+            "name": "デザイナー"
+        }
+    ]
+
+## Holidays [/api/v1/holidays]
+
+### GET
+休日(土日祝、平日、曜日を問わない)
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "土日祝"
+        },
+        {
+            "id": "2",
+            "name": "平日"
+        }
+    ]
+
+## Industries [/api/v1/industries]
+
+### GET
+業界
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "IT・インターネット・ゲーム"
+        },
+        {
+            "id": "2",
+            "name": "メーカー"
+        }
+    ]
