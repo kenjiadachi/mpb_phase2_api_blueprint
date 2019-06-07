@@ -173,57 +173,24 @@ Cacoo: 26
 
     + Attribute
         + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
-        + preferred_skills: (array)
-            + C (string)
-            + Ruby (string)
-        + required_skills: (array)
-            + C (string)
-            + Ruby (string)
-        + skill_categories: (array) - スキルカテゴリ
-            + `システム開発(Web/スマホ)` (string)
-            + `システム開発(ゲーム)` (string)
-            + `システム開発(業務系)` (string)
-            + `システム開発(OPEN)` (string)
-            + `システム開発(汎用)` (string)
-            + `システム開発(制御・組込)` (string)
-            + `インフラエンジニア` (string)
-            + `デザイン` (string)
-            + `ディレクション` (string)
-            + `営業` (string)
-            + `事務` (string)
-        + phases: (array) - 担当工程
-            + 要求分析 (string)
-            + 要件定義 (string)
-            + 基本設計 (string)
-            + 詳細設計 (string)
-            + コーディング (string)
-            + コードレビュー (string)
-            + 単体テスト (string)
-            + 結合テスト (string)
-            + システムテスト (string)
-            + 受け入れテスト (string)
-        + positions: (array) - ポジション
-            + コンサルタント (string)
-            + `プロジェクトマネージャー(PM/PMO)` (string)
-            + `プロジェクトリーダー(PL)` (string)
-            + `システムエンジニア(SE)` (string)
-            + `プログラマ(PG)` (string)
-            + テスター (string)
-            + 保守/運用 (string)
-            + Webデザイナー (string)
-            + イラストレーター (string)
-            + プランナー (string)
-            + ディレクター (string)
-            + DBA (string)
-            + ヘルプデスク (string)
-            + 事務 (string)
-            + 営業 (string)
+        + preferred_skill_ids: (array)
+            + 1 (number) - スキルマスタのID
+            + 2 (number) - スキルマスタのID
+        + required_skill_ids: (array)
+            + 3 (number) - スキルマスタのID
+            + 4 (number) - スキルマスタのID
+        + skill_category_ids: (array) - スキルカテゴリ
+            + 1 (number) - スキルカテゴリマスタのID
+            + 2 (number) - スキルカテゴリマスタのID
+        + phase_ids: (array) - 担当工程
+            + 1 (number) - 担当工程マスタのID
+            + 2 (number) - 担当工程マスタのID
+        + position_ids: (array) - ポジション
+            + 1 (number) - ポジションマスタのID
+            + 2 (number) - ポジションマスタのID
         + start_date: `2019-01-01` - 開始日
         + end_date: `2019-04-01` - 終了日
-        + holiday: (enum, required) - 休日
-            + weekends_and_holidays (string) - 土日祝
-            + weekdays (string) - 平日
-            + any_time (string) - 曜日を問わない
+        + holiday_id: (number, required) - 休日マスタのID
         + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
         + min_working_date_count: 3 (number) - 最低稼働日数
         + is_remotable: true (boolean, required) - リモート可
@@ -231,11 +198,9 @@ Cacoo: 26
         + is_newbiable: true (boolean, required) - 未経験OK
         + exists_travel_cost: true (boolean, required) - 交通費支給
         + is_flex: true (boolean, required) - フレックス制
-        + contract_styles: (array) - 契約形態
-            + 正社員 (string)
-            + 契約社員 (string)
-            + パート・アルバイト (string)
-            + 業務委託 (string)
+        + contract_style_ids: (array) - 契約形態
+            + 1 (number) - 契約形態マスタのID
+            + 2 (number) - 契約形態マスタのID
         + closest_station_line: 丸ノ内線 (string)
         + closest_station_name: 東京駅 (string)
         + unit: (enum, required) - 単価の単位
@@ -251,16 +216,7 @@ Cacoo: 26
         + remark: 特にありません。 (string) - 備考
         + needed_skill: 【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル (string) - スキル詳細
         + work_content: 開発のお仕事です。 (string) - 作業内容
-        + industry:  (enum) - 業界
-            + it_internet_game (string) - IT・インターネット・ゲーム
-            + maker (string) - メーカー
-            + consulting (string) - コンサルティング
-            + logistick (string) - 商社・流通・小売・サービス
-            + advertising (string) - 広告・マスコミ・エンタメ
-            + finance (string) - 金融・不動産・建設
-            + medical (string) - 医薬・医療・メディカル
-            + infrastructure (string) - インフラ・公共・その他
-            + other (string) - その他
+        + industry_id: 3 (number) - 業界マスタのID
         + min_settlement_hour: 30 (number) - 最低精算基準時間
         + max_settlement_hour: 50 (number) - 最高精算基準時間
 
@@ -338,57 +294,24 @@ Cacoo: 26
     + Attribute
 
         + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
-        + preferred_skills: (array)
-            + C (string)
-            + Ruby (string)
-        + required_skills: (array)
-            + C (string)
-            + Ruby (string)
-        + skill_categories: (array) - スキルカテゴリ
-            + `システム開発(Web/スマホ)` (string)
-            + `システム開発(ゲーム)` (string)
-            + `システム開発(業務系)` (string)
-            + `システム開発(OPEN)` (string)
-            + `システム開発(汎用)` (string)
-            + `システム開発(制御・組込)` (string)
-            + `インフラエンジニア` (string)
-            + `デザイン` (string)
-            + `ディレクション` (string)
-            + `営業` (string)
-            + `事務` (string)
-        + phases: (array) - 担当工程
-            + 要求分析 (string)
-            + 要件定義 (string)
-            + 基本設計 (string)
-            + 詳細設計 (string)
-            + コーディング (string)
-            + コードレビュー (string)
-            + 単体テスト (string)
-            + 結合テスト (string)
-            + システムテスト (string)
-            + 受け入れテスト (string)
-        + positions: (array) - ポジション
-            + コンサルタント (string)
-            + `プロジェクトマネージャー(PM/PMO)` (string)
-            + `プロジェクトリーダー(PL)` (string)
-            + `システムエンジニア(SE)` (string)
-            + `プログラマ(PG)` (string)
-            + テスター (string)
-            + 保守/運用 (string)
-            + Webデザイナー (string)
-            + イラストレーター (string)
-            + プランナー (string)
-            + ディレクター (string)
-            + DBA (string)
-            + ヘルプデスク (string)
-            + 事務 (string)
-            + 営業 (string)
+        + preferred_skill_ids: (array)
+            + 1 (number) - スキルマスタのID
+            + 2 (number) - スキルマスタのID
+        + required_skill_ids: (array)
+            + 3 (number) - スキルマスタのID
+            + 4 (number) - スキルマスタのID
+        + skill_category_ids: (array) - スキルカテゴリ
+            + 1 (number) - スキルカテゴリマスタのID
+            + 2 (number) - スキルカテゴリマスタのID
+        + phase_ids: (array) - 担当工程
+            + 1 (number) - 担当工程マスタのID
+            + 2 (number) - 担当工程マスタのID
+        + position_ids: (array) - ポジション
+            + 1 (number) - ポジションマスタのID
+            + 2 (number) - ポジションマスタのID
         + start_date: `2019-01-01` - 開始日
         + end_date: `2019-04-01` - 終了日
-        + holiday: (enum, required) - 休日
-            + weekends_and_holidays (string) - 土日祝
-            + weekdays (string) - 平日
-            + any_time (string) - 曜日を問わない
+        + holiday_id: (number, required) - 休日マスタのID
         + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
         + min_working_date_count: 3 (number) - 最低稼働日数
         + is_remotable: true (boolean, required) - リモート可
@@ -396,11 +319,9 @@ Cacoo: 26
         + is_newbiable: true (boolean, required) - 未経験OK
         + exists_travel_cost: true (boolean, required) - 交通費支給
         + is_flex: true (boolean, required) - フレックス制
-        + contract_styles: (array) - 契約形態
-            + 正社員 (string)
-            + 契約社員 (string)
-            + パート・アルバイト (string)
-            + 業務委託 (string)
+        + contract_style_ids: (array) - 契約形態
+            + 1 (number) - 契約形態マスタのID
+            + 2 (number) - 契約形態マスタのID
         + closest_station_line: 丸ノ内線 (string)
         + closest_station_name: 東京駅 (string)
         + unit: (enum, required) - 単価の単位
@@ -416,16 +337,7 @@ Cacoo: 26
         + remark: 特にありません。 (string) - 備考
         + needed_skill: 【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル (string) - スキル詳細
         + work_content: 開発のお仕事です。 (string) - 作業内容
-        + industry:  (enum) - 業界
-            + it_internet_game (string) - IT・インターネット・ゲーム
-            + maker (string) - メーカー
-            + consulting (string) - コンサルティング
-            + logistick (string) - 商社・流通・小売・サービス
-            + advertising (string) - 広告・マスコミ・エンタメ
-            + finance (string) - 金融・不動産・建設
-            + medical (string) - 医薬・医療・メディカル
-            + infrastructure (string) - インフラ・公共・その他
-            + other (string) - その他
+        + industry_id: 3 (number) - 業界マスタのID
         + min_settlement_hour: 30 (number) - 最低精算基準時間
         + max_settlement_hour: 50 (number) - 最高精算基準時間
 

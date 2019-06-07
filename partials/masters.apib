@@ -96,3 +96,99 @@
             "name": "メーカー"
         }
     ]
+
+## ContractStyles [/api/v1/contract_styles]
+
+### GET
+契約形態
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "正社員"
+        },
+        {
+            "id": "2",
+            "name": "契約社員"
+        }
+    ]
+
+## Positions [/api/v1/positions]
+
+### GET
+契約形態
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "コンサルタント"
+        },
+        {
+            "id": "2",
+            "name": "プロジェクトマネージャー(PM/PMO)"
+        }
+    ]
+
+## SkillCategories [/api/v1/skill_categories]
+
+### GET
+スキルカテゴリ
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "システム開発(Web/スマホ)"
+        },
+        {
+            "id": "2",
+            "name": "システム開発(ゲーム)"
+        }
+    ]
+
+## Phases [/api/v1/phases]
+
+### GET
+担当工程
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "要求分析"
+        },
+        {
+            "id": "2",
+            "name": "要件定義"
+        }
+    ]
