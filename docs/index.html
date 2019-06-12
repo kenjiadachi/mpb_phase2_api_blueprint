@@ -11,7 +11,7 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
     "<span class="hljs-attribute">last_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"きくち"</span></span>,
     "<span class="hljs-attribute">display_name</span>": <span class="hljs-value"><span class="hljs-string">"DH280"</span></span>,
     "<span class="hljs-attribute">sex</span>": <span class="hljs-value"><span class="hljs-string">"男性"</span></span>,
-    "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990/01/01"</span></span>,
+    "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990-01-01"</span></span>,
     "<span class="hljs-attribute">age</span>": <span class="hljs-value"><span class="hljs-number">24</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
     "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
@@ -118,13 +118,16 @@ Cacoo: 1.1</p>
   "<span class="hljs-attribute">first_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"わたる"</span></span>,
   "<span class="hljs-attribute">last_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"きくち"</span></span>,
   "<span class="hljs-attribute">sex</span>": <span class="hljs-value"><span class="hljs-string">"male"</span></span>,
-  "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990/01/01"</span></span>,
+  "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990-01-01"</span></span>,
   "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
   "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
-  "<span class="hljs-attribute">profession_ids</span>": <span class="hljs-value">[
-    <span class="hljs-number">1</span>,
-    <span class="hljs-number">2</span>,
-    <span class="hljs-number">3</span>
+  "<span class="hljs-attribute">user_professions_attributes</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">profession_id</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">profession_id</span>": <span class="hljs-value"><span class="hljs-number">2</span>
+    </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -166,7 +169,7 @@ Cacoo: 1.1</p>
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"メールアドレス"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">profession_ids</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">user_professions_attributes</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
     </span>}
   </span>}</span>,
@@ -216,7 +219,7 @@ Cacoo: 32 <br></p>
       <span class="hljs-string">"C"</span>,
       <span class="hljs-string">"Ruby"</span>
     ]</span>,
-    "<span class="hljs-attribute">hope_professions_name_cont</span>": <span class="hljs-value">[
+    "<span class="hljs-attribute">user_professions_name_cont</span>": <span class="hljs-value">[
       <span class="hljs-string">"エンジニア"</span>,
       <span class="hljs-string">"デザイナー"</span>
     ]
@@ -231,7 +234,7 @@ Cacoo: 32 <br></p>
         "<span class="hljs-attribute">skills_name_cont</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">hope_professions_name_cont</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">user_professions_name_cont</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
         </span>}
       </span>}
@@ -262,8 +265,8 @@ Cacoo: 13.5</p>
     "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"http://placehold.jp/150x150.png"</span></span>,
     "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"社会人用留学斡旋会社のwebサイトデザイン"</span></span>,
     "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span></span>,
-    "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/01/01"</span></span>,
-    "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/03/01"</span></span>,
+    "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+    "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
     "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-string">"1万円〜2万円"</span></span>,
     "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/"</span>
   </span>},
@@ -272,8 +275,8 @@ Cacoo: 13.5</p>
     "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"http://placehold.jp/150x150.png"</span></span>,
     "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"金融系アプリのwebサイトデザイン"</span></span>,
     "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span></span>,
-    "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/01/01"</span></span>,
-    "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/03/01"</span></span>,
+    "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+    "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
     "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-string">"1万円〜2万円"</span></span>,
     "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/"</span>
   </span>}
@@ -283,8 +286,8 @@ Cacoo: 13.5</p>
   "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"http://placehold.jp/150x150.png"</span></span>,
   "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"社会人用留学斡旋会社のwebサイトデザイン"</span></span>,
   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span></span>,
-  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/01/01"</span></span>,
-  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/03/01"</span></span>,
+  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
   "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-string">"_0_5000"</span></span>,
   "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -372,8 +375,8 @@ Cacoo: 13.5</p>
   "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"http://placehold.jp/150x150.png"</span></span>,
   "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"社会人用留学斡旋会社のwebサイトデザイン"</span></span>,
   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span></span>,
-  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/01/01"</span></span>,
-  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/03/01"</span></span>,
+  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
   "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-string">"_0_5000"</span></span>,
   "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -456,20 +459,20 @@ Cacoo: 13.5</p>
 Cacoo: 12</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:user_id/licenses</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span>
-      <span class="hljs-string">"get_date"</span>: <span class="hljs-string">"2019/01/01"</span></span>,
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"応用情報技術者"</span>
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+    "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"応用情報技術者"</span>
   </span>},
   {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span>
-      <span class="hljs-string">"get_date"</span>: <span class="hljs-string">"2019/02/01"</span></span>,
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"基本情報技術者"</span>
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+    "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-02-01"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"基本情報技術者"</span>
   </span>}
 ]</code></pre><div style="height: 1px;"></div></div></div></div><div id="user周り-licenses-post" class="action post"><h4 class="action-heading"><div class="name"></div><a href="#user周り-licenses-post" class="method post">POST</a><code class="uri">/api/v1/users/:user_id/licenses</code></h4><p>Licenseを追加する
 Cacoo: 12</p>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:user_id/licenses</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"基本情報技術者"</span></span>,
-  "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/01/01"</span>
+  "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -516,7 +519,7 @@ Cacoo: 12</p>
 Cacoo: 12</p>
 <h4>Example URI</h4><div class="definition"><span class="method patch">PATCH</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:user_id/licenses/:id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"基本情報技術者"</span></span>,
-  "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/01/01"</span>
+  "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -634,14 +637,9 @@ Cacoo: 14</p>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="user周り-hopes-1" class="resource"><h3 class="resource-heading">Hopes <a href="#user周り-hopes-1" class="permalink">&nbsp;&para;</a></h3><div id="user周り-hopes-patch" class="action patch"><h4 class="action-heading"><div class="name"></div><a href="#user周り-hopes-patch" class="method patch">PATCH</a><code class="uri">/api/v1/users/:user_id/hopes/:id</code></h4><p>Hopeを編集する <br>
 Cacoo: 14</p>
 <h4>Example URI</h4><div class="definition"><span class="method patch">PATCH</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:user_id/hopes/:id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">profession_ids</span>": <span class="hljs-value">[
-    <span class="hljs-number">1</span>,
-    <span class="hljs-number">2</span>,
-    <span class="hljs-number">3</span>
-  ]</span>,
   "<span class="hljs-attribute">min_price</span>": <span class="hljs-value"><span class="hljs-number">300000</span></span>,
   "<span class="hljs-attribute">max_price</span>": <span class="hljs-value"><span class="hljs-number">1000000</span></span>,
-  "<span class="hljs-attribute">scheduled_start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/10/10"</span></span>,
+  "<span class="hljs-attribute">scheduled_start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-10-10"</span></span>,
   "<span class="hljs-attribute">activable_count</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
   "<span class="hljs-attribute">residable_count</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
   "<span class="hljs-attribute">appeal_point</span>": <span class="hljs-value"><span class="hljs-string">"私は天才です"</span></span>,
@@ -651,9 +649,6 @@ Cacoo: 14</p>
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
   "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">profession_ids</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-    </span>}</span>,
     "<span class="hljs-attribute">min_price</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"最低希望価格"</span>
@@ -719,8 +714,8 @@ Cacoo: 14</p>
 Cacoo: 15</p>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:id/educations</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">school_name</span>": <span class="hljs-value"><span class="hljs-string">"早稲田大学"</span></span>,
-  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2012/04/01"</span></span>,
-  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2016/03/31"</span>
+  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2012-04-01"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2016"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -735,7 +730,7 @@ Cacoo: 15</p>
     </span>}</span>,
     "<span class="hljs-attribute">end_date</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"卒業日"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"03-31 (string) - 卒業日"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -774,8 +769,8 @@ Cacoo: 15</p>
 Cacoo: 15</p>
 <h4>Example URI</h4><div class="definition"><span class="method patch">PATCH</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:user_id/educations/:id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">school_name</span>": <span class="hljs-value"><span class="hljs-string">"早稲田大学"</span></span>,
-  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2012/04/01"</span></span>,
-  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2016/03/31"</span>
+  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2012-04-01"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2016-03-31"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -903,8 +898,8 @@ Cacoo: 16.1~4</p>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:id/resumes</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">company_name</span>": <span class="hljs-value"><span class="hljs-string">"Peach株式会社"</span></span>,
   "<span class="hljs-attribute">contract_style_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2018/04/01"</span></span>,
-  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/03/31"</span></span>,
+  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2018-04-01"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-31"</span></span>,
   "<span class="hljs-attribute">industry_id</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
   "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"コンサルタント"</span></span>,
   "<span class="hljs-attribute">members_count</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
@@ -1062,8 +1057,8 @@ Cacoo: 16.1~4</p>
 <h4>Example URI</h4><div class="definition"><span class="method patch">PATCH</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:user_id/resumes/:id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">company_name</span>": <span class="hljs-value"><span class="hljs-string">"Peach株式会社"</span></span>,
   "<span class="hljs-attribute">contract_style_id</span>": <span class="hljs-value"><span class="hljs-string">"3"</span></span>,
-  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2018/04/01"</span></span>,
-  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/03/31"</span></span>,
+  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2018-04-01"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-31"</span></span>,
   "<span class="hljs-attribute">industry_id</span>": <span class="hljs-value"><span class="hljs-string">"4"</span></span>,
   "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"コンサルタント"</span></span>,
   "<span class="hljs-attribute">members_count</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
@@ -1218,92 +1213,133 @@ Cacoo: 16.1~4</p>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="user周り-usersall" class="resource"><h3 class="resource-heading">UsersALL <a href="#user周り-usersall" class="permalink">&nbsp;&para;</a></h3><div id="user周り-usersall-get" class="action get"><h4 class="action-heading"><div class="name"></div><a href="#user周り-usersall-get" class="method get">GET</a><code class="uri">/api/v1/users/:id/all</code></h4><p>ユーザーに紐づく情報を含めて取得する <br>
 Cacoo: 10, 10.5, 33, 33.1</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/v1/users/:id/all</span></div><div class="title"><strong>Request</strong></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-    <span class="hljs-string">"id"</span>: <span class="hljs-string">"98296425-f344-46ec-bebd-e91f05620bb8"</span>,
-    <span class="hljs-string">"name"</span>: <span class="hljs-string">"菊地 航"</span>,
-    <span class="hljs-string">"first_name"</span>: <span class="hljs-string">"航"</span>,
-    <span class="hljs-string">"last_name"</span>: <span class="hljs-string">"菊地"</span>,
-    <span class="hljs-string">"first_name_kana"</span>: <span class="hljs-string">"わたる"</span>,
-    <span class="hljs-string">"last_name_kana"</span>: <span class="hljs-string">"きくち"</span>,
-    <span class="hljs-string">"display_name"</span>: <span class="hljs-string">"DH280"</span>,
-    <span class="hljs-string">"sex"</span>: <span class="hljs-string">"male"</span>,
-    <span class="hljs-string">"birthdate"</span>: <span class="hljs-string">"1990/01/01"</span>
-    <span class="hljs-string">"age"</span>: <span class="hljs-number">24</span>,
-    <span class="hljs-string">"phone_number"</span>: <span class="hljs-string">"080-1234-5678"</span>,
-    <span class="hljs-string">"email"</span>: <span class="hljs-string">"foo@example.com"</span>,
-    <span class="hljs-string">"skill_remark"</span>: <span class="hljs-string">"秘書検定2級"</span>,
-    <span class="hljs-string">"closest_station"</span>: <span class="hljs-string">"丸ノ内線 四ツ谷駅"</span>,
-    <span class="hljs-string">"closest_station_line"</span>: <span class="hljs-string">"丸ノ内線"</span>,
-    <span class="hljs-string">"closest_station_name"</span>: <span class="hljs-string">"四ツ谷駅"</span>,
-    <span class="hljs-string">"skills"</span>: [
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"98296425-f344-46ec-bebd-e91f05620bb8"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"菊地 航"</span></span>,
+    "<span class="hljs-attribute">first_name</span>": <span class="hljs-value"><span class="hljs-string">"航"</span></span>,
+    "<span class="hljs-attribute">last_name</span>": <span class="hljs-value"><span class="hljs-string">"菊地"</span></span>,
+    "<span class="hljs-attribute">first_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"わたる"</span></span>,
+    "<span class="hljs-attribute">last_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"きくち"</span></span>,
+    "<span class="hljs-attribute">display_name</span>": <span class="hljs-value"><span class="hljs-string">"DH280"</span></span>,
+    "<span class="hljs-attribute">sex</span>": <span class="hljs-value"><span class="hljs-string">"male"</span></span>,
+    "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990-01-01"</span>
+    <span class="hljs-string">"age"</span>: <span class="hljs-number">24</span></span>,
+    "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
+    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
+    "<span class="hljs-attribute">skill_remark</span>": <span class="hljs-value"><span class="hljs-string">"秘書検定2級"</span></span>,
+    "<span class="hljs-attribute">closest_station</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線 四ツ谷駅"</span></span>,
+    "<span class="hljs-attribute">closest_station_line</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線"</span></span>,
+    "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value"><span class="hljs-string">"四ツ谷駅"</span></span>,
+    "<span class="hljs-attribute">professions</span>": <span class="hljs-value">[<span class="hljs-string">"エンジニア"</span>, <span class="hljs-string">"デザイナー"</span>, <span class="hljs-string">"営業"</span>, <span class="hljs-string">"事務"</span>]</span>,
+    "<span class="hljs-attribute">skills</span>": <span class="hljs-value">[
         {
-            <span class="hljs-string">"years_count"</span>: <span class="hljs-number">3</span>,
-            <span class="hljs-string">"name"</span>: <span class="hljs-string">"Java"</span>
-        },
+            "<span class="hljs-attribute">years_count</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Java"</span>
+        </span>},
         {
-            <span class="hljs-string">"years_count"</span>: <span class="hljs-number">5</span>,
-            <span class="hljs-string">"name"</span>: <span class="hljs-string">"C++"</span>
-        }
-    ],
-    <span class="hljs-string">"hope"</span> {
-        <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-string">"professions"</span>: [<span class="hljs-string">"エンジニア"</span>, <span class="hljs-string">"デザイナー"</span>, <span class="hljs-string">"営業"</span>, <span class="hljs-string">"事務"</span>],
-        <span class="hljs-string">"min_price"</span>: <span class="hljs-number">300000</span>,
-        <span class="hljs-string">"max_price"</span>: <span class="hljs-number">1000000</span>,
-        <span class="hljs-string">"scheduled_start_date"</span>: <span class="hljs-string">"2019-10-10"</span>,
-        <span class="hljs-string">"activable_count"</span>: <span class="hljs-number">3</span>,
-        <span class="hljs-string">"residable_count"</span>: <span class="hljs-number">2</span>,
-        <span class="hljs-string">"holiday"</span>: <span class="hljs-string">"土日祝"</span>,
-        <span class="hljs-string">"appeal_point"</span>: <span class="hljs-string">"私は天才です"</span>,
-        <span class="hljs-string">"comment"</span>: <span class="hljs-string">"すごい人です！"</span>,
-    },
-    <span class="hljs-string">"lisenses"</span>: [
+            "<span class="hljs-attribute">years_count</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"C++"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">hope</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">min_price</span>": <span class="hljs-value"><span class="hljs-number">300000</span></span>,
+        "<span class="hljs-attribute">max_price</span>": <span class="hljs-value"><span class="hljs-number">1000000</span></span>,
+        "<span class="hljs-attribute">scheduled_start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-10-10"</span></span>,
+        "<span class="hljs-attribute">activable_count</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">residable_count</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+        "<span class="hljs-attribute">holiday</span>": <span class="hljs-value"><span class="hljs-string">"土日祝"</span></span>,
+        "<span class="hljs-attribute">appeal_point</span>": <span class="hljs-value"><span class="hljs-string">"私は天才です"</span></span>,
+        "<span class="hljs-attribute">comment</span>": <span class="hljs-value"><span class="hljs-string">"すごい人です！"</span></span>,
+    }</span>,
+    "<span class="hljs-attribute">lisenses</span>": <span class="hljs-value">[
         {
-            <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
-            <span class="hljs-string">"get_date"</span>: <span class="hljs-string">"2019/01/01"</span>,
-            <span class="hljs-string">"name"</span>: <span class="hljs-string">"応用情報技術者"</span>
-        },
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+            "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"応用情報技術者"</span>
+        </span>},
         {
-            <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
-            <span class="hljs-string">"get_date"</span>: <span class="hljs-string">"2019/02/01"</span>,
-            <span class="hljs-string">"name"</span>: <span class="hljs-string">"基本情報技術者"</span>
-        }
-    ],
-    <span class="hljs-string">"portfolios"</span>: [
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+            "<span class="hljs-attribute">get_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-02-01"</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"基本情報技術者"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">portfolios</span>": <span class="hljs-value">[
         {
-            <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
-            <span class="hljs-string">"image"</span>: <span class="hljs-string">"http://placehold.jp/150x150.png"</span>,
-            <span class="hljs-string">"title"</span>: <span class="hljs-string">"社会人用留学斡旋会社のwebサイトデザイン"</span>,
-            <span class="hljs-string">"description"</span>: <span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span>,
-            <span class="hljs-string">"start_date"</span>: <span class="hljs-string">"2019/01/01"</span>,
-            <span class="hljs-string">"end_date"</span>: <span class="hljs-string">"2019/03/01"</span>,
-            <span class="hljs-string">"price"</span>: <span class="hljs-string">"30万円〜50万円"</span>,
-            <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.com/"</span>
-        },
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+            "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"http://placehold.jp/150x150.png"</span></span>,
+            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"社会人用留学斡旋会社のwebサイトデザイン"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span></span>,
+            "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+            "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
+            "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-string">"30万円〜50万円"</span></span>,
+            "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/"</span>
+        </span>},
         {
-            <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
-            <span class="hljs-string">"image"</span>: <span class="hljs-string">"http://placehold.jp/150x150.png"</span>,
-            <span class="hljs-string">"title"</span>: <span class="hljs-string">"金融系アプリのwebサイトデザイン"</span>,
-            <span class="hljs-string">"description"</span>: <span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span>,
-            <span class="hljs-string">"start_date"</span>: <span class="hljs-string">"2019/01/01"</span>,
-            <span class="hljs-string">"end_date"</span>: <span class="hljs-string">"2019/03/01"</span>,
-            <span class="hljs-string">"price"</span>: <span class="hljs-string">"1万円〜2万円"</span>,
-            <span class="hljs-string">"url"</span>: <span class="hljs-string">"http://example.com/"</span>
-        }
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+            "<span class="hljs-attribute">image</span>": <span class="hljs-value"><span class="hljs-string">"http://placehold.jp/150x150.png"</span></span>,
+            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"金融系アプリのwebサイトデザイン"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。"</span></span>,
+            "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+            "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-01"</span></span>,
+            "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-string">"1万円〜2万円"</span></span>,
+            "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">educations</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">school_name</span>": <span class="hljs-value"><span class="hljs-string">"早稲田大学"</span></span>,
+            "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2012-04-01"</span></span>,
+            "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2016-03-31"</span>
+        </span>},
+        {
+            "<span class="hljs-attribute">school_name</span>": <span class="hljs-value"><span class="hljs-string">"早稲田大学"</span></span>,
+            "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2012-04-01"</span></span>,
+            "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2016-03-31"</span>
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">resumes</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">company_name</span>": <span class="hljs-value"><span class="hljs-string">"Peach株式会社"</span></span>,
+            "<span class="hljs-attribute">contract_style</span>": <span class="hljs-value"><span class="hljs-string">"正社員"</span></span>,
+            "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2018-04-01"</span></span>,
+            "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-03-31"</span></span>,
+            "<span class="hljs-attribute">industry</span>": <span class="hljs-value"><span class="hljs-string">"IT・インターネット・ゲーム"</span></span>,
+            "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-string">"コンサルタント"</span></span>,
+            "<span class="hljs-attribute">members_count</span>": <span class="hljs-value"><span class="hljs-string">"5"</span></span>,
+            "<span class="hljs-attribute">project_name</span>": <span class="hljs-value"><span class="hljs-string">"生産管理システムバージョンアップ支援"</span></span>,
+            "<span class="hljs-attribute">project_description</span>": <span class="hljs-value"><span class="hljs-string">"Rails化を行いました。"</span></span>,
+            "<span class="hljs-attribute">resume_engineer_attributes</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">contains_requirement_definition</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+                "<span class="hljs-attribute">contains_basic_design</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+                "<span class="hljs-attribute">contains_detailed_design</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+                "<span class="hljs-attribute">contains_coding</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+                "<span class="hljs-attribute">contains_test</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+                "<span class="hljs-attribute">contains_maintenance</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">resume_designer_attributes</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">contains_graphic_design</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+                "<span class="hljs-attribute">contains_ui_ux_design</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+                "<span class="hljs-attribute">contains_web_design</span>": <span class="hljs-value"><span class="hljs-string">"false"</span></span>,
+                "<span class="hljs-attribute">contains_dtp_design</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+                "<span class="hljs-attribute">contains_game_design</span>": <span class="hljs-value"><span class="hljs-string">"true"</span></span>,
+                "<span class="hljs-attribute">contains_cg_design</span>": <span class="hljs-value"><span class="hljs-string">"true"</span>
+            </span>}
+        </span>}
     ]
 
-}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="company周り" class="resource-group"><h2 class="group-heading">Company周り <a href="#company周り" class="permalink">&para;</a></h2><p>CompanyとCompanyが持つ情報(Project, Staff, ContractStyle, Position, Phase, SkillCategory)周りをまとめています。</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="company周り" class="resource-group"><h2 class="group-heading">Company周り <a href="#company周り" class="permalink">&para;</a></h2><p>CompanyとCompanyが持つ情報(Project, Staff, ContractStyle, Position, Phase, SkillCategory)周りをまとめています。</p>
 <div id="company周り-companies" class="resource"><h3 class="resource-heading">Companies <a href="#company周り-companies" class="permalink">&nbsp;&para;</a></h3><div id="company周り-companies-post" class="action post"><h4 class="action-heading"><div class="name"></div><a href="#company周り-companies-post" class="method post">POST</a><code class="uri">/v1/company</code></h4><p>企業を作成する <br>
 Cacoo: 1.3</p>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/v1/company</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Peach株式会社"</span></span>,
-  "<span class="hljs-attribute">postal_code</span>": <span class="hljs-value"><span class="hljs-string">"123"</span></span>,
+  "<span class="hljs-attribute">postal_code</span>": <span class="hljs-value"><span class="hljs-string">"123-4567"</span></span>,
   "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"東京都千代田区丸の内1"</span></span>,
   "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"http://example.com/"</span></span>,
-  "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"03"</span></span>,
+  "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"03-1234-5678"</span></span>,
   "<span class="hljs-attribute">staff_attributes</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">first_name</span>": <span class="hljs-value"><span class="hljs-string">"航"</span></span>,
     "<span class="hljs-attribute">last_name</span>": <span class="hljs-value"><span class="hljs-string">"菊地"</span></span>,
-    "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080"</span></span>,
+    "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
     "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"staff@example.com"</span>
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -1316,7 +1352,7 @@ Cacoo: 1.3</p>
     </span>}</span>,
     "<span class="hljs-attribute">postal_code</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"4567 (string, required) - 郵便番号"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"郵便番号"</span>
     </span>}</span>,
     "<span class="hljs-attribute">address</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -1328,7 +1364,7 @@ Cacoo: 1.3</p>
     </span>}</span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"1234-5678 (string, required) - 会社電話番号"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"会社電話番号"</span>
     </span>}</span>,
     "<span class="hljs-attribute">staff_attributes</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -1343,7 +1379,7 @@ Cacoo: 1.3</p>
         </span>}</span>,
         "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"1234-5678 (string, required) - 担当者電話番号"</span>
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"担当者電話番号"</span>
         </span>}</span>,
         "<span class="hljs-attribute">email</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -1353,6 +1389,7 @@ Cacoo: 1.3</p>
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
         <span class="hljs-string">"first_name"</span>,
         <span class="hljs-string">"last_name"</span>,
+        <span class="hljs-string">"phone_number"</span>,
         <span class="hljs-string">"email"</span>
       ]</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"スタッフ情報"</span>
@@ -1360,7 +1397,9 @@ Cacoo: 1.3</p>
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
     <span class="hljs-string">"name"</span>,
-    <span class="hljs-string">"url"</span>
+    <span class="hljs-string">"postal_code"</span>,
+    <span class="hljs-string">"url"</span>,
+    <span class="hljs-string">"phone_number"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
@@ -1395,7 +1434,7 @@ Cacoo: 22, 22.6</p>
 <h4>Example URI</h4><div class="definition"><span class="method patch">PATCH</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/v1/staffs/:staff_id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">first_name</span>": <span class="hljs-value"><span class="hljs-string">"航"</span></span>,
   "<span class="hljs-attribute">last_name</span>": <span class="hljs-value"><span class="hljs-string">"菊地"</span></span>,
-  "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080"</span></span>,
+  "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
   "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"staff@example.com"</span></span>,
   "<span class="hljs-attribute">staff_mail_alert_attributes</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">needs_when_threads_is_created</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
@@ -1418,7 +1457,7 @@ Cacoo: 22, 22.6</p>
     </span>}</span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"1234-5678 (string, required) - 担当者電話番号"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"担当者電話番号"</span>
     </span>}</span>,
     "<span class="hljs-attribute">email</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -1461,6 +1500,7 @@ Cacoo: 22, 22.6</p>
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
     <span class="hljs-string">"first_name"</span>,
     <span class="hljs-string">"last_name"</span>,
+    <span class="hljs-string">"phone_number"</span>,
     <span class="hljs-string">"email"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -1518,8 +1558,8 @@ Cacoo: 26, 27, 29.5</p>
     "<span class="hljs-attribute">max_price-</span>": <span class="hljs-value"><span class="hljs-number">4000</span></span>,
     "<span class="hljs-attribute">closest_stations_line</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線"</span></span>,
     "<span class="hljs-attribute">closest_stations_name</span>": <span class="hljs-value"><span class="hljs-string">"東京駅"</span></span>,
-    "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/01/01"</span></span>,
-    "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/02/01"</span></span>,
+    "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-01-01"</span></span>,
+    "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-02-01"</span></span>,
     "<span class="hljs-attribute">holiday</span>": <span class="hljs-value"><span class="hljs-string">"土日祝"</span></span>,
     "<span class="hljs-attribute">scheduled_hour_count</span>": <span class="hljs-value"><span class="hljs-number">180</span></span>,
     "<span class="hljs-attribute">skill_details</span>": <span class="hljs-value"><span class="hljs-string">"【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル"</span></span>,
@@ -1841,8 +1881,8 @@ Cacoo: 31</p>
   "<span class="hljs-attribute">closest_stations_line</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線"</span></span>,
   "<span class="hljs-attribute">closest_stations_name</span>": <span class="hljs-value"><span class="hljs-string">"東京駅"</span></span>,
   "<span class="hljs-attribute">phase</span>":
-  <span class="hljs-value"><span class="hljs-string">"start_date"</span>: <span class="hljs-string">"2019/01/01"</span></span>,
-  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019/02/01"</span></span>,
+  <span class="hljs-value"><span class="hljs-string">"start_date"</span>: <span class="hljs-string">"2019-01-01"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2019-02-01"</span></span>,
   "<span class="hljs-attribute">holiday</span>": <span class="hljs-value"><span class="hljs-string">"土日祝"</span></span>,
   "<span class="hljs-attribute">scheduled_hour_count</span>": <span class="hljs-value"><span class="hljs-number">180</span></span>,
   "<span class="hljs-attribute">skill_details</span>": <span class="hljs-value"><span class="hljs-string">"【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル"</span></span>,
@@ -2197,7 +2237,7 @@ Cacoo: 30</p>
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"要件定義"</span>
   </span>}
-]</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 07 Jun 2019</p><script>/* eslint-env browser */
+]</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 13 Jun 2019</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 

@@ -26,7 +26,7 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
         "last_name_kana": "きくち",
         "display_name": "DH280",
         "sex": "男性",
-        "birthdate": "1990/01/01",
+        "birthdate": "1990-01-01",
         "age": 24,
         "phone_number": "080-1234-5678",
         "email": "foo@example.com",
@@ -91,13 +91,14 @@ Cacoo: 1.1
         + sex: male (enum, required) - 性別
             + male (string) - 男性
             + female (string) - 女性
-        + birthdate: 1990/01/01 (string, required) - 誕生日
+        + birthdate: `1990-01-01` (string, required) - 誕生日
         + phone_number: `080-1234-5678` (string, required) - 電話番号
         + email: foo@example.com (string, required) - メールアドレス
-        + profession_ids: (array)
-            + 1 (number) - 職種マスタのID
-            + 2 (number) - 職種マスタのID
-            + 3 (number) - 職種マスタのID
+        + user_professions_attributes: (array)
+            + (object)
+                + profession_id: 1 (number) - 職種マスタのID
+            + (object)
+                + profession_id: 2 (number) - 職種マスタのID
 
 + Response 200 (application/json)
 
@@ -128,7 +129,7 @@ Cacoo: 32 <br>
             + skills_name_cont: (array)
                 + C
                 + Ruby
-            + hope_professions_name_cont: (array)
+            + user_professions_name_cont: (array)
                 + エンジニア
                 + デザイナー
 
@@ -175,8 +176,8 @@ Cacoo: 13.5
               "image": "http://placehold.jp/150x150.png",
               "title": "社会人用留学斡旋会社のwebサイトデザイン",
               "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
-              "start_date": "2019/01/01",
-              "end_date": "2019/03/01",
+              "start_date": "2019-01-01",
+              "end_date": "2019-03-01",
               "price": "1万円〜2万円",
               "url": "http://example.com/"
           },
@@ -185,8 +186,8 @@ Cacoo: 13.5
               "image": "http://placehold.jp/150x150.png",
               "title": "金融系アプリのwebサイトデザイン",
               "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
-              "start_date": "2019/01/01",
-              "end_date": "2019/03/01",
+              "start_date": "2019-01-01",
+              "end_date": "2019-03-01",
               "price": "1万円〜2万円",
               "url": "http://example.com/"
           }
@@ -205,8 +206,8 @@ Cacoo: 13.5
         + image: http://placehold.jp/150x150.png (string) - Portfolioのキャプチャ画像など
         + title: 社会人用留学斡旋会社のwebサイトデザイン (string, required) - Portfolioのタイトル
         + description: サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。 (string) - Portfolioの説明文
-        + start_date: 2019/01/01 (string) - Portfolioの開始日
-        + end_date: 2019/03/01 (string) - Portfolioの終了日
+        + start_date: `2019-01-01` (string) - Portfolioの開始日
+        + end_date: `2019-03-01` (string) - Portfolioの終了日
         + price: _0_5000 (enum, required) - Portfolioの参考価格
             + _0_5000 (string) - 5千円未満
             + _5000_10000 (string) - 5千円〜1万円
@@ -249,8 +250,8 @@ Cacoo: 13.5
         + image: http://placehold.jp/150x150.png (string) - Portfolioのキャプチャ画像など
         + title: 社会人用留学斡旋会社のwebサイトデザイン (string) - タイトル
         + description: サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。 (string) - 説明文
-        + start_date: 2019/01/01 (string) - 開始日
-        + end_date: 2019/03/01 (string) - 終了日
+        + start_date: `2019-01-01` (string) - 開始日
+        + end_date: `2019-03-01` (string) - 終了日
         + price: _0_5000 (enum) - 参考価格
             + _0_5000 (string) - 5千円未満
             + _5000_10000 (string) - 5千円〜1万円
@@ -300,13 +301,13 @@ Cacoo: 12
 
       [
           {
-              "id": 2
-              "get_date": "2019/01/01",
+              "id": 2,
+              "get_date": "2019-01-01",
               "name": "応用情報技術者"
           },
           {
-              "id": 3
-              "get_date": "2019/02/01",
+              "id": 3,
+              "get_date": "2019-02-01",
               "name": "基本情報技術者"
           }
       ]
@@ -321,7 +322,7 @@ Cacoo: 12
     + Attribute
 
         + name: 基本情報技術者 (string) - Licenseの名前
-        + get_date: 2019/01/01 (string) - Portfolioの開始日
+        + get_date: `2019-01-01` (string) - Portfolioの開始日
 
 + Response 200 (application/json)
 
@@ -352,7 +353,7 @@ Cacoo: 12
     + Attribute
 
         + name: 基本情報技術者 (string) - Licenseの名前
-        + get_date: 2019/01/01 (string) - Licenseの開始日
+        + get_date: `2019-01-01` (string) - Licenseの開始日
 
 + Response 200 (application/json)
 
@@ -460,13 +461,9 @@ Cacoo: 14
 + Request (application/json)
 
     + Attribute
-        + profession_ids: (array)
-            + 1 (number) - 職種マスタのID
-            + 2 (number) - 職種マスタのID
-            + 3 (number) - 職種マスタのID
         + min_price: 300000 (number) - 最低希望価格
         + max_price: 1000000 (number) - 最高希望価格
-        + scheduled_start_date: 2019/10/10 (string) - 稼働開始可能日
+        + scheduled_start_date: `2019-10-10` (string) - 稼働開始可能日
         + activable_count: 3 (number) - 1週間のうち働ける日数
         + residable_count: 2 (number) - 1週間のうち常駐できる日数
         + appeal_point: 私は天才です (string) - アピールポイント
@@ -498,8 +495,8 @@ Cacoo: 15
 
     + Attribute
         + school_name: 早稲田大学 (string, required) - 学校名
-        + start_date: 2012/04/01 (string) - 入学日
-        + end_date: 2016/03/31 (string) - 卒業日
+        + start_date: `2012-04-01` (string) - 入学日
+        + end_date: 2016-03-31 (string) - 卒業日
 
 + Response 200 (application/json)
 
@@ -528,8 +525,8 @@ Cacoo: 15
 
     + Attribute
         + school_name: 早稲田大学 (string) - 学校名
-        + start_date: 2012/04/01 (string) - 入学日
-        + end_date: 2016/03/31 (string) - 卒業日
+        + start_date: `2012-04-01` (string) - 入学日
+        + end_date: `2016-03-31` (string) - 卒業日
 
 + Response 200 (application/json)
 
@@ -605,8 +602,8 @@ Cacoo: 16.1~4
     + Attribute
         + company_name: Peach株式会社 (string) - 会社名
         + contract_style_id: 1 (number) - 雇用形態マスタのID
-        + start_date: 2018/04/01 (string) - 参画開始日
-        + end_date: 2019/03/31 (string) - 参画終了日
+        + start_date: `2018-04-01` (string) - 参画開始日
+        + end_date: `2019-03-31` (string) - 参画終了日
         + industry_id: 3　(number) - 業界マスタのID
         + position: コンサルタント (string) - 役職、役割
         + members_count: 5　(number) - チーム人数
@@ -655,8 +652,8 @@ Cacoo: 16.1~4
     + Attribute
         + company_name: Peach株式会社 (string) - 会社名
         + contract_style_id: 3 - 契約形態マスタのID
-        + start_date: 2018/04/01 (string) - 参画開始日
-        + end_date: 2019/03/31 (string) - 参画終了日
+        + start_date: `2018-04-01` (string) - 参画開始日
+        + end_date: `2019-03-31` (string) - 参画終了日
         + industry_id: 4 - 業界マスタのID
         + position: コンサルタント (string) - 役職、役割
         + members_count: 5　(number) - チーム人数
@@ -719,7 +716,7 @@ Cacoo: 10, 10.5, 33, 33.1
         "last_name_kana": "きくち",
         "display_name": "DH280",
         "sex": "male",
-        "birthdate": "1990/01/01"
+        "birthdate": "1990-01-01"
         "age": 24,
         "phone_number": "080-1234-5678",
         "email": "foo@example.com",
@@ -727,6 +724,7 @@ Cacoo: 10, 10.5, 33, 33.1
         "closest_station": "丸ノ内線 四ツ谷駅",
         "closest_station_line": "丸ノ内線",
         "closest_station_name": "四ツ谷駅",
+        "professions": ["エンジニア", "デザイナー", "営業", "事務"],
         "skills": [
             {
                 "years_count": 3,
@@ -737,9 +735,8 @@ Cacoo: 10, 10.5, 33, 33.1
                 "name": "C++"
             }
         ],
-        "hope" {
+        "hope": {
             "id": 1,
-            "professions": ["エンジニア", "デザイナー", "営業", "事務"],
             "min_price": 300000,
             "max_price": 1000000,
             "scheduled_start_date": "2019-10-10",
@@ -752,12 +749,12 @@ Cacoo: 10, 10.5, 33, 33.1
         "lisenses": [
             {
                 "id": 1,
-                "get_date": "2019/01/01",
+                "get_date": "2019-01-01",
                 "name": "応用情報技術者"
             },
             {
                 "id": 2,
-                "get_date": "2019/02/01",
+                "get_date": "2019-02-01",
                 "name": "基本情報技術者"
             }
         ],
@@ -767,8 +764,8 @@ Cacoo: 10, 10.5, 33, 33.1
                 "image": "http://placehold.jp/150x150.png",
                 "title": "社会人用留学斡旋会社のwebサイトデザイン",
                 "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
-                "start_date": "2019/01/01",
-                "end_date": "2019/03/01",
+                "start_date": "2019-01-01",
+                "end_date": "2019-03-01",
                 "price": "30万円〜50万円",
                 "url": "http://example.com/"
             },
@@ -777,10 +774,51 @@ Cacoo: 10, 10.5, 33, 33.1
                 "image": "http://placehold.jp/150x150.png",
                 "title": "金融系アプリのwebサイトデザイン",
                 "description": "サイトリニューアルのデザインを担当させていただきました。画像は納品した時のトップページのデザイン案です。",
-                "start_date": "2019/01/01",
-                "end_date": "2019/03/01",
+                "start_date": "2019-01-01",
+                "end_date": "2019-03-01",
                 "price": "1万円〜2万円",
                 "url": "http://example.com/"
+            }
+        ],
+        "educations": [
+            {
+                "school_name": "早稲田大学",
+                "start_date": "2012-04-01",
+                "end_date": "2016-03-31"
+            },
+            {
+                "school_name": "早稲田大学",
+                "start_date": "2012-04-01",
+                "end_date": "2016-03-31"
+            }
+        ],
+        "resumes": [
+            {
+                "company_name": "Peach株式会社",
+                "contract_style": "正社員",
+                "start_date": "2018-04-01",
+                "end_date": "2019-03-31",
+                "industry": "IT・インターネット・ゲーム",
+                "position": "コンサルタント",
+                "members_count": "5",
+                "project_name": "生産管理システムバージョンアップ支援",
+                "project_description": "Rails化を行いました。",
+                "resume_engineer_attributes": {
+                    "contains_requirement_definition": "false",
+                    "contains_basic_design": "false",
+                    "contains_detailed_design": "false",
+                    "contains_coding": "true",
+                    "contains_test": "true",
+                    "contains_maintenance": "true"
+                },
+                "resume_designer_attributes": {
+                    "contains_graphic_design": "false",
+                    "contains_ui_ux_design": "false",
+                    "contains_web_design": "false",
+                    "contains_dtp_design": "true",
+                    "contains_game_design": "true",
+                    "contains_cg_design": "true"
+                }
             }
         ]
 
