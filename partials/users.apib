@@ -1,7 +1,7 @@
 # Group User周り
 Userと、Userが持つ情報(Portfolios, Skills, Educations, Licenses, Hopes, UserMailAlerts)周りをまとめています。
 
-## Users [/api/v1/users/:id]
+## Users [/api/users/:id]
 
 ### GET
 
@@ -74,7 +74,7 @@ Cacoo: 11
 ### DELETE
 Userを削除する
 
-## Users  [/api/v1/users/]
+## Users  [/api/users/]
 
 ### POST
 Userを追加する <br>
@@ -114,7 +114,7 @@ Cacoo: 1.1
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Users  [/api/v1/users/search]
+## Users  [/api/users/search]
 
 ### GET
 userの検索を行います <br>
@@ -156,7 +156,7 @@ Cacoo: 32 <br>
         },
     ]
 
-## Portfolios [/api/v1/users/:user_id/portfolios/]
+## Portfolios [/api/users/:user_id/portfolios/]
 
 ### GET
 userにひもづく、全てのportfolioを取得する <br>
@@ -237,7 +237,7 @@ Cacoo: 13.5
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Portfolios [/api/v1/users/:user_id/portfolios/:id]
+## Portfolios [/api/users/:user_id/portfolios/:id]
 
 ### PATCH
 portfolioを編集する <br>
@@ -285,7 +285,7 @@ Cacoo: 13.5
 portfolioを削除する
 
 
-## Licenses [/api/v1/users/:user_id/licenses]
+## Licenses [/api/users/:user_id/licenses]
 
 ### GET
 userにひもづく、全てのLicenseの情報を取得する <br>
@@ -338,7 +338,7 @@ Cacoo: 12
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Licenses [/api/v1/users/:user_id/licenses/:id]
+## Licenses [/api/users/:user_id/licenses/:id]
 
 ### DELETE
 Licenseを削除する
@@ -369,7 +369,7 @@ Cacoo: 12
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Skills [/api/v1/users/:id/skills]
+## Skills [/api/users/:id/skills]
 
 ### GET
 userにひもづく、全てのSkillの情報を取得する <br>
@@ -397,7 +397,7 @@ Cacoo: 13, 24.0~24.5, 25
 
 
 
-## Skills [/api/v1/users/:user_id/skills/:id]
+## Skills [/api/users/:user_id/skills/:id]
 
 ### POST
 Skillを追加する <br>
@@ -426,7 +426,7 @@ Cacoo: 13
 ### DELETE
 Skillを削除する
 
-## Hopes [/api/v1/users/:user_id/hopes]
+## Hopes [/api/users/:user_id/hopes]
 
 ### GET
 userにひもづく、Hopeの情報を取得する <br>
@@ -452,7 +452,7 @@ Cacoo: 14
       }
 
 
-## Hopes [/api/v1/users/:user_id/hopes/:id]
+## Hopes [/api/users/:user_id/hopes/:id]
 
 ### PATCH
 Hopeを編集する <br>
@@ -485,7 +485,7 @@ Cacoo: 14
         + message: Bad Request (string)
 
 
-## Educations [/api/v1/users/:id/educations]
+## Educations [/api/users/:id/educations]
 
 ### POST
 Educationを追加する <br>
@@ -512,7 +512,7 @@ Cacoo: 15
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Educations [/api/v1/users/:user_id/educations/:id]
+## Educations [/api/users/:user_id/educations/:id]
 
 ### DELETE
 Educationを削除する
@@ -542,7 +542,7 @@ Cacoo: 15
         + code: 400 (number)
         + message: Bad Request (string)
 
-## UserMailAlerts [/api/v1/users/:user_id/mail_alert]
+## UserMailAlerts [/api/users/:user_id/mail_alert]
 
 ### GET
 メール通知設定を取得する <br>
@@ -591,7 +591,7 @@ Cacoo: 22.5
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Resumes [/api/v1/users/:id/resumes]
+## Resumes [/api/users/:id/resumes]
 
 ### POST
 Resumeを追加する <br>
@@ -638,7 +638,7 @@ Cacoo: 16.1~4
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Resumes [/api/v1/users/:user_id/resumes/:id]
+## Resumes [/api/users/:user_id/resumes/:id]
 
 ### DELETE
 職務経歴を削除する
@@ -688,7 +688,7 @@ Cacoo: 16.1~4
         + code: 400 (number)
         + message: Bad Request (string)
 
-## UsersALL [/api/v1/users/:id/all]
+## UsersALL [/api/users/:id/all]
 
 ### GET
 
@@ -746,7 +746,7 @@ Cacoo: 10, 10.5, 33, 33.1
             "appeal_point": "私は天才です",
             "comment": "すごい人です！",
         },
-        "lisenses": [
+        "licenses": [
             {
                 "id": 1,
                 "get_date": "2019-01-01",
