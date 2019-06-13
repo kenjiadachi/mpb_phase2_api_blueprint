@@ -1,7 +1,7 @@
 # Group Company周り
 CompanyとCompanyが持つ情報(Project, Staff, ContractStyle, Position, Phase, SkillCategory)周りをまとめています。
 
-## Companies [/company]
+## Companies [/api/company]
 
 ### POST
 企業を作成する <br>
@@ -38,7 +38,7 @@ Cacoo: 1.3
         + message: Bad Request (string)
 
 
-## Staffs [/staffs/:staff_id]
+## Staffs [/api/staffs/:staff_id]
 
 ### PATCH
 スタッフ情報を編集する <br>
@@ -74,7 +74,7 @@ Cacoo: 22, 22.6
         + message: Bad Request (string)
 
 
-## Projects [/company/:company_id/projects]
+## Projects [/api/company/:company_id/projects]
 
 ### GET
 企業に紐づく公開されている案件情報を全て取得する <br>
@@ -235,7 +235,7 @@ Cacoo: 26
         + message: Bad Request (string)
 
 
-## Projects [/company/:company_id/projects/:project_id]
+## Projects [/api/company/:company_id/projects/:project_id]
 
 ### GET
 案件情報を取得する <br>
@@ -360,7 +360,7 @@ Cacoo: 26
 
 
 
-## Projects  [/projects/search]
+## Projects  [/api/projects/search]
 
 ### GET
 projectの検索を行います <br>
@@ -403,7 +403,7 @@ Cacoo: 30
 
 
 <!--
-## Offers [/companies/:company_id/projects/:project_id/offers]
+## Offers [/api/companies/:company_id/projects/:project_id/offers]
 
 ### GET
 案件について、オファー一覧を取得する <br>
@@ -439,7 +439,7 @@ Cacoo: 23
     ]
 
 
-## Offers [/companies/:company_id/projects/:project_id/:user_id/offer]
+## Offers [/api/companies/:company_id/projects/:project_id/:user_id/offer]
 
 ### POST
 人材へのオファーを行う
@@ -460,7 +460,7 @@ Cacoo: 23
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Offers [/projects/:project_id/offers/:offer_id]
+## Offers [/api/projects/:project_id/offers/:offer_id]
 
 ### PATCH
 オファー内容を編集(面談日時の入力など)する
@@ -492,7 +492,7 @@ Cacoo: 23
 
 
 
-## Favorables [/companies/:id/favorables]
+## Favorables [/api/companies/:id/favorables]
 
 ### GET
 お気に入りした人材一覧を取得する
