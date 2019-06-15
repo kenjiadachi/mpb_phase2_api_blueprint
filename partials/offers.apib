@@ -1,0 +1,131 @@
+# Group Offers
+案件とUserのOfferに関するアクションをまとめています
+
+## Offers [/api/staffs/:staff_id/offers]
+
+### GET
+案件ごとにオファーした人材情報を取得する <br>
+Cacoo: 24
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+      [
+          {
+              "id": "1",
+              "name": "東京駅案件",
+              ”company_name": "Peach株式会社",
+              "users": [
+                  {
+                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                      "display_name": "DH2800",
+                      ”professions": ["エンジニア", "デザイナー"],
+                      "age": 32,
+                      "skills": ["C", "PowerPoint"],
+
+                  },
+                  {
+                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                      "display_name": "DH2800",
+                      ”professions": ["エンジニア", "デザイナー"],
+                      "age": 32,
+                      "skills": ["C", "PowerPoint"],
+                  }
+              ]
+
+          },
+          {
+              "id": "2",
+              "name": "東京駅案件",
+              ”company_name": "Peach株式会社",
+              "users": [
+                  {
+                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                      "display_name": "DH2800",
+                      ”professions": ["エンジニア", "デザイナー"],
+                      "age": 32,
+                      "skills": ["C", "PowerPoint"],
+
+                  },
+                  {
+                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                      "display_name": "DH2800",
+                      ”professions": ["エンジニア", "デザイナー"],
+                      "age": 32,
+                      "skills": ["C", "PowerPoint"],
+                  }
+              ]
+          }
+      ]
+
+## Offers [/api/staffs/:staff_id/offers/:project_id/:user_id]
+
+### POST
+
+人材に案件をオファーする <br>
+Cacoo: 34.5
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success offer create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
+
+### DELETE
+
+人材に案件をオファーしていたのを取り消す <br>
+Cacoo: 24
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success offer delete (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
+
+## Offers [/api/users/:user_id/offers/:project_id/]
+
+### PATCH
+
+人材側から、オファーを非表示にする <br>
+(オファー自体を削除してしまうと、再度オファーが可能なため非表示にする) <br>
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success offer update (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
