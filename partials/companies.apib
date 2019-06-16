@@ -172,21 +172,6 @@ Cacoo: 26
 
     + Attribute
         + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
-        + preferred_skill_ids: (array)
-            + 1 (number) - スキルマスタのID
-            + 2 (number) - スキルマスタのID
-        + required_skill_ids: (array)
-            + 3 (number) - スキルマスタのID
-            + 4 (number) - スキルマスタのID
-        + skill_category_ids: (array) - スキルカテゴリ
-            + 1 (number) - スキルカテゴリマスタのID
-            + 2 (number) - スキルカテゴリマスタのID
-        + phase_ids: (array) - 担当工程
-            + 1 (number) - 担当工程マスタのID
-            + 2 (number) - 担当工程マスタのID
-        + position_ids: (array) - ポジション
-            + 1 (number) - ポジションマスタのID
-            + 2 (number) - ポジションマスタのID
         + start_date: `2019-01-01` - 開始日
         + end_date: `2019-04-01` - 終了日
         + holiday_id: (number, required) - 休日マスタのID
@@ -197,9 +182,6 @@ Cacoo: 26
         + is_newbiable: true (boolean, required) - 未経験OK
         + exists_travel_cost: true (boolean, required) - 交通費支給
         + is_flex: true (boolean, required) - フレックス制
-        + contract_style_ids: (array) - 契約形態
-            + 1 (number) - 契約形態マスタのID
-            + 2 (number) - 契約形態マスタのID
         + closest_station_line: 丸ノ内線 (string)
         + closest_station_name: 東京駅 (string)
         + unit: (enum, required) - 単価の単位
@@ -218,6 +200,36 @@ Cacoo: 26
         + industry_id: 3 (number) - 業界マスタのID
         + min_settlement_hour: 30 (number) - 最低精算基準時間
         + max_settlement_hour: 50 (number) - 最高精算基準時間
+        + preferred_skills_attributes: (array)
+            + (object)
+                + skill_id: 1 (number) - スキルマスタのID
+            + (object)
+                + skill_id: 2 (number) - スキルマスタのID
+        + required_skills_attributes: (array)
+            + (object)
+                + skill_id: 1 (number) - スキルマスタのID
+            + (object)
+                + skill_id: 2 (number) - スキルマスタのID
+        + skill_categories_attributes: (array)
+            + (object)
+                + skill_category_id: 1 (number) - スキルカテゴリマスタのID
+            + (object)
+                + skill_category_id: 2 (number) - スキルカテゴリマスタのID
+        + phases_attributes: (array)
+            + (object)
+                + phase_id: 1 (number) - 担当工程マスタのID
+            + (object)
+                + phase_id: 2 (number) - 担当工程マスタのID
+        + positions_attributes: (array)
+            + (object)
+                + position_id: 1 (number) - ポジションマスタのID
+            + (object)
+                + position_id: 2 (number) - ポジションマスタのID
+        + contract_styles_attributes: (array)
+            + (object)
+                + contract_style_id: 1 (number) - 契約形態マスタのID
+            + (object)
+                + contract_style_id: 2 (number) - 契約形態マスタのID
 
 + Response 200 (application/json)
 
