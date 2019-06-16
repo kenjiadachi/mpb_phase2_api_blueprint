@@ -1,7 +1,7 @@
 # Group Company周り
 CompanyとCompanyが持つ情報(Project, Staff, ContractStyle, Position, Phase, SkillCategory)周りをまとめています。
 
-## Companies [/api/company]
+## Companies [/api/companies]
 
 ### POST
 企業を作成する <br>
@@ -74,7 +74,7 @@ Cacoo: 22, 22.6
         + message: Bad Request (string)
 
 
-## Projects [/api/company/:company_id/projects]
+## Projects [/api/companies/:company_id/projects]
 
 ### GET
 企業に紐づく公開されている案件情報を全て取得する <br>
@@ -235,7 +235,7 @@ Cacoo: 26
         + message: Bad Request (string)
 
 
-## Projects [/api/company/:company_id/projects/:project_id]
+## Projects [/api/companies/:company_id/projects/:project_id]
 
 ### GET
 案件情報を取得する <br>
