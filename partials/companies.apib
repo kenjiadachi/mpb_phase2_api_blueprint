@@ -245,10 +245,11 @@ Cacoo: 26
         + message: Bad Request (string)
 
 
-## Projects [/api/companies/:company_id/projects/:project_id]
+## Projects [/api/projects/:project_id]
 
 ### GET
 案件情報を取得する <br>
+Userであれば見られる情報なので、companyとは紐付けない <br>
 Cacoo: 31
 
 + Request
@@ -295,6 +296,8 @@ Cacoo: 31
           "preferred_skills": ["C", "Ruby"],
           "required_skills": ["PowerPoint", "C++"]
       }
+
+## Projects [/api/companies/:company_id/projects/:project_id]
 
 ### PATCH
 案件情報を編集する <br>
@@ -377,6 +380,7 @@ Cacoo: 26
 
         + code: 400 (number)
         + message: Bad Request (string)
+
 
 ### DELETE
 案件を削除する
