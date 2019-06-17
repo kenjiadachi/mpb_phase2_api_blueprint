@@ -394,8 +394,32 @@ projectの検索を行います <br>
 Cacoo: 30
 
 + Request
-  + Headers
-    Content-Type: application/json
+    + Headers
+        Content-Type: application/json
+
+    + Attribute
+        + q: (object)
+            + required_skill_skills_name_cont_any: (array)
+                + C
+                + Ruby
+            + industry_name_cont_any: (array)
+                + IT・インターネット・ゲーム
+                + メーカー
+            + positions_name_cont_any: (array)
+                + コンサルタント
+                + `プロジェクトマネージャー(PM/PMO)`
+            + skill_categories_name_cont_any: (array)
+                + `システム開発(ゲーム)`
+                + `システム開発(Web/スマホ)`
+            + contract_styles_name_cont_any: (array)
+                + 正社員
+                + 契約社員
+            + is_remotable_eq: true (string)
+            + is_newbiable_eq: true (string)
+            + exists_travel_cost_eq: true (string)
+            + is_flex_eq: true (string)
+            + unit_eq: hourly (string)
+            + min_price_gteq: 1500 (number)
 
 + Response 200 (application/json)
 
