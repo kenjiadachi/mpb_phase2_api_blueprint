@@ -1331,23 +1331,21 @@ Cacoo: 10, 10.5, 33, 33.1</p>
 <div id="userfavorites-userfavorites" class="resource"><h3 class="resource-heading">UserFavorites <a href="#userfavorites-userfavorites" class="permalink">&nbsp;&para;</a></h3><div id="userfavorites-userfavorites-get" class="action get"><h4 class="action-heading"><div class="name"></div><a href="#userfavorites-userfavorites-get" class="method get">GET</a><code class="uri">/api/users/:user_id/favorites</code></h4><p>お気に入りした案件情報を取得する <br>
 Cacoo: 18</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/users/:user_id/favorites</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
-  {
-      "id": "1",
-      "name": "東京駅案件",
-      ”company": {
-          name:  "Peach株式会社",
-      },
-      "status": "未着手"
+    {
+        "id": "1",
+        "name": "東京駅案件",
+        ”company": {
+            name:  "Peach株式会社",
+        }
 
-  },
-  {
-      "id": "2",
-      "name": "東京駅案件",
-      ”company": {
-          name:  "Peach株式会社",
-      },
-      "status": "未着手"
-  }
+},
+{
+    "id": "2",
+    "name": "東京駅案件",
+    ”company": {
+        name:  "Peach株式会社",
+    }
+}
 ]</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="userfavorites-userfavorites-1" class="resource"><h3 class="resource-heading">UserFavorites <a href="#userfavorites-userfavorites-1" class="permalink">&nbsp;&para;</a></h3><div id="userfavorites-userfavorites-post" class="action post"><h4 class="action-heading"><div class="name"></div><a href="#userfavorites-userfavorites-post" class="method post">POST</a><code class="uri">/api/users/:user_id/favorites/:project_id</code></h4><p>案件をお気に入りする <br>
 Cacoo: 18, 21, 30, 31</p>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/users/:user_id/favorites/:project_id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -2594,7 +2592,7 @@ Cacoo: 17</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/users/:user_id/channels</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
       id: <span class="hljs-string">"1"</span>,
-      status: <span class="hljs-string">"未着手"</span>,
+      status: <span class="hljs-string">"面談"</span>,
       mtg_datetime: <span class="hljs-string">"2019-07-01 10:00:00"</span>,
       project: {
           id: <span class="hljs-string">"1"</span>,
@@ -2608,7 +2606,7 @@ Cacoo: 17</p>
   },
   {
       id: <span class="hljs-string">"2"</span>,
-      status: <span class="hljs-string">"未着手"</span>,
+      status: <span class="hljs-string">"面談"</span>,
       mtg_datetime: <span class="hljs-string">"2019-07-01 10:00:00"</span>,
       project: {
           id: <span class="hljs-string">"1"</span>,
@@ -2658,14 +2656,14 @@ Cacoo: 23</p>
       name: <span class="hljs-string">"京橋インフラエンジニア案件"</span>,
       channels: [
           {
-              status: <span class="hljs-string">"未着手"</span>,
+              status: <span class="hljs-string">"面談"</span>,
               mtg_datetime: <span class="hljs-string">"2019-09-01 10:00:00"</span>,
               user: {
                   display_name: <span class="hljs-string">"DH2405"</span>
               }
           },
           {
-              status: <span class="hljs-string">"未着手"</span>,
+              status: <span class="hljs-string">"面談"</span>,
               mtg_datetime: <span class="hljs-string">"2019-09-01 10:00:00"</span>,
               user: {
                   display_name: <span class="hljs-string">"DH2405"</span>
@@ -2678,14 +2676,14 @@ Cacoo: 23</p>
       name: <span class="hljs-string">"京橋インフラエンジニア案件"</span>,
       channels: [
           {
-              status: <span class="hljs-string">"未着手"</span>,
+              status: <span class="hljs-string">"面談"</span>,
               mtg_datetime: <span class="hljs-string">"2019-09-01 10:00:00"</span>,
               user: {
                   display_name: <span class="hljs-string">"DH2405"</span>
               }
           },
           {
-              status: <span class="hljs-string">"未着手"</span>,
+              status: <span class="hljs-string">"面談"</span>,
               mtg_datetime: <span class="hljs-string">"2019-09-01 10:00:00"</span>,
               user: {
                   display_name: <span class="hljs-string">"DH2405"</span>
