@@ -1,7 +1,7 @@
-# Group Threads
-UserとProjectの担当者とがメッセージをするThreadsについてまとめています
+# Group Channels
+UserとProjectの担当者とがメッセージをするChannelsについてまとめています
 
-## Threads [/api/users/:user_id/threads]
+## Channels [/api/users/:user_id/channels]
 
 ### GET
 
@@ -46,10 +46,10 @@ Cacoo: 17
           }
       ]
 
-## Threads [/api/users/:user_id/threads/:project_id]
+## Channels [/api/users/:user_id/channels/:project_id]
 
 ### POST
-Threadを作成する <br>
+Channelを作成する <br>
 UserFavorite、Offerがあれば紐付ける <br>
 Cacoo: 18, 21, 31
 
@@ -62,7 +62,7 @@ Cacoo: 18, 21, 31
     + Attribute
 
         + code: 200 (number)
-        + message: Success thread create (string)
+        + message: Success channel create (string)
 
 + Response 400 (application/json)
 
@@ -71,11 +71,11 @@ Cacoo: 18, 21, 31
         + code: 400 (number)
         + message: Bad Request (string)
 
-## Threads [/api/companies/:company_id/threads]
+## Channels [/api/companies/:company_id/channels]
 
 ### GET
 
-企業が持つ案件ごとにThreadを取得する <br>
+企業が持つ案件ごとにChannelを取得する <br>
 Cacoo: 23
 
 + Request
@@ -90,7 +90,7 @@ Cacoo: 23
           {
               id: "1",
               name: "京橋インフラエンジニア案件",
-              threads: [
+              channels: [
                   {
                       status: "未着手",
                       mtg_datetime: "2019-09-01 10:00:00",
@@ -110,7 +110,7 @@ Cacoo: 23
           {
               id: "2",
               name: "京橋インフラエンジニア案件",
-              threads: [
+              channels: [
                   {
                       status: "未着手",
                       mtg_datetime: "2019-09-01 10:00:00",
@@ -130,7 +130,7 @@ Cacoo: 23
       ]
 
 
-## Threads [/api/companies/:company_id/threads/:thread_id]
+## Channels [/api/companies/:company_id/channels/:channel_id]
 
 ###PATCH
 
@@ -148,7 +148,7 @@ Cacoo: 23.5
     + Attribute
 
         + code: 200 (number)
-        + message: Success thread update (string)
+        + message: Success channel update (string)
 
 + Response 400 (application/json)
 
@@ -158,10 +158,10 @@ Cacoo: 23.5
         + message: Bad Request (string)
 
 
-## Threads [/api/users/:user_id/threads/:thread_id]
+## Channels [/api/users/:user_id/channels/:channel_id]
 
 ### DELETE
-Threadを削除する <br>
+Channelを削除する <br>
 (企業側からは削除できない) <br>
 Cacoo: 17.1
 
@@ -172,7 +172,7 @@ Cacoo: 17.1
     + Attribute
 
         + code: 200 (number)
-        + message: Success thread delete (string)
+        + message: Success channel delete (string)
 
 + Response 400 (application/json)
 
