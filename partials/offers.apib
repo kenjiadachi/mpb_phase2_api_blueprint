@@ -1,7 +1,7 @@
 # Group Offers
 案件とUserのOfferに関するアクションをまとめています
 
-## Offers [/api/companies/:company_id/offers]
+## Offers [/api/companies/:company_id/projects/:project_id/offers]
 
 ### GET
 案件ごとにオファーした人材情報を取得する <br>
@@ -19,7 +19,6 @@ Cacoo: 24
           {
               "id": "1",
               "name": "東京駅案件",
-              ”company_name": "Peach株式会社",
               "users": [
                   {
                       "id": "98296425-f344-46ec-bebd-e91f05620bb8",
@@ -42,7 +41,6 @@ Cacoo: 24
           {
               "id": "2",
               "name": "東京駅案件",
-              ”company_name": "Peach株式会社",
               "users": [
                   {
                       "id": "98296425-f344-46ec-bebd-e91f05620bb8",
@@ -63,7 +61,7 @@ Cacoo: 24
           }
       ]
 
-## Offers [/api/companies/:company_id/offers/:project_id/:user_id]
+## Offers [/api/companies/:company_id/projects/:project_id/offers/:user_id]
 
 ### POST
 
