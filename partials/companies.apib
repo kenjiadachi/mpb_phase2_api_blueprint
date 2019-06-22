@@ -301,6 +301,8 @@ Cacoo: 31
 
 ### PATCH
 案件情報を編集する <br>
+preferred_skills_attributesなどの複数項目をrequestするものは、削除等の対応を行うためこれまでのものを削除し、新規にrelationを貼り直す構造になっています。<br>
+preferred_skills_attributesなどは何もない場合(relationが存在しない場合)はnilで送り、変更がない場合はpreferred_skills_attributes自体を送信しないようにしてください。<br>
 Cacoo: 26
 
 + Request (application/json)
