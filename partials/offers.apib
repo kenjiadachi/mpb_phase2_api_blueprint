@@ -17,50 +17,60 @@ Cacoo: 24
 
       [
           {
-              "id": "1",
+              "project_id": "1",
               "name": "東京駅案件",
-              "users": [
+              "offers": [
                   {
-                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
-                      "display_name": "DH2800",
-                      "status": "未着手",
-                      ”professions": ["エンジニア", "デザイナー"],
-                      "age": 32,
-                      "skills": ["C", "PowerPoint"],
-
+                      "is_finished": false,
+                      "user": {
+                          "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                          "display_name": "DH2800",
+                          "status": "未着手",
+                          ”professions": ["エンジニア", "デザイナー"],
+                          "age": 32,
+                          "skills": ["C", "PowerPoint"],
+                      },
                   },
                   {
-                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
-                      "display_name": "DH2800",
-                      "status": "未着手",
-                      ”professions": ["エンジニア", "デザイナー"],
-                      "age": 32,
-                      "skills": ["C", "PowerPoint"],
-                  }
+                      "is_finished": false,
+                      "user": {
+                          "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                          "display_name": "DH2800",
+                          "status": "未着手",
+                          ”professions": ["エンジニア", "デザイナー"],
+                          "age": 32,
+                          "skills": ["C", "PowerPoint"],
+                      },
+                  },
               ]
 
           },
           {
-              "id": "2",
+              "project_id": "1",
               "name": "東京駅案件",
-              "users": [
+              "offers": [
                   {
-                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
-                      "display_name": "DH2800",
-                      "status": "未着手",
-                      ”professions": ["エンジニア", "デザイナー"],
-                      "age": 32,
-                      "skills": ["C", "PowerPoint"],
-
+                      "is_finished": false,
+                      "user": {
+                          "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                          "display_name": "DH2800",
+                          "status": "未着手",
+                          ”professions": ["エンジニア", "デザイナー"],
+                          "age": 32,
+                          "skills": ["C", "PowerPoint"],
+                      },
                   },
                   {
-                      "id": "98296425-f344-46ec-bebd-e91f05620bb8",
-                      "display_name": "DH2800",
-                      "status": "未着手",
-                      ”professions": ["エンジニア", "デザイナー"],
-                      "age": 32,
-                      "skills": ["C", "PowerPoint"],
-                  }
+                      "is_finished": false,
+                      "user": {
+                          "id": "98296425-f344-46ec-bebd-e91f05620bb8",
+                          "display_name": "DH2800",
+                          "status": "未着手",
+                          ”professions": ["エンジニア", "デザイナー"],
+                          "age": 32,
+                          "skills": ["C", "PowerPoint"],
+                      },
+                  },
               ]
           }
       ]
@@ -115,6 +125,7 @@ Cacoo: 24
 
 人材側から、オファーを非表示にする <br>
 (オファー自体を削除してしまうと、再度オファーが可能なため非表示にする) <br>
+同一の組み合わせのメッセージスレッドがある場合、削除する <br>
 
 + Request (application/json)
 
