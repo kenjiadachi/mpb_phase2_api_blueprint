@@ -28,7 +28,7 @@ Cacoo: 1.3
     + Attribute
 
         + code: 200 (number)
-        + message: Success user create (string)
+        + message: Success company create (string)
 
 + Response 400 (application/json)
 
@@ -36,6 +36,20 @@ Cacoo: 1.3
 
         + code: 400 (number)
         + message: Bad Request (string)
+
+## Companies [/api/companies/:id]
+
+### DELETE
+企業とそれに関連するstaff、project、company_favoriteを削除する
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success company destroy (string)
 
 
 ## Staffs [/api/staffs/:staff_id]
