@@ -141,3 +141,38 @@ Cacoo: 45
               ]
           }
       ]
+
+
+## Notifications [/api/admins/:id/notifications]
+
+
+### POST
+お知らせを作成します。 <br>
+Cacoo: 44
+
+
++ Request (application/json)
+
+    + Attribute
+
+        + title: 年末年始の休業日について (string, required) - お知らせタイトル
+        + content: `下記の期間を年末年始の休業日とさせて頂きます。緊急のお問合わせにつきましては、各担当者までお電話を頂きますようお願い致します。休業期間：2017年12月29日（金）～2018年1月5日（金）　※12月28日（木）は午前のみ通常営業年始営業は2018年1月9日(火)からとなっております。ご不便をお掛け致しますが、何卒ご理解をよろしくお願いいたします。` (string, required) - お知らせ中身
+        + sent_datetime: `2019-01-01 10:00:00` (string, required) - 送信日時
+        + sent_to: : (enum, required) - 送信先
+            + companies (string) - 企業
+            + users (string) - 人材
+            + both (string) - どちらも
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success notification create (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)

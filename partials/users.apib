@@ -823,3 +823,63 @@ Cacoo: 10, 10.5, 33, 33.1
         ]
 
     }
+
+## Notifications [/api/users/:user_id/notifications/]
+
+### GET
+お知らせ一覧を取得する
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "user_notifications_id": "1",
+            "is_opened": "false",
+            "notification" {
+                "id": "2",
+                "title": "お気にいりした案件の情報が更新されました。",
+                "content": "あなたがお気にいりした<案件名>の情報が更新されました。 \n <案件名>の詳細はこちらからご確認ください。",
+                "sent_datetime": "2019-10-10 10:00:00"
+            }
+        },
+        {
+            "user_notifications_id": "2",
+            "is_opened": "false",
+            "notification" {
+                "id": "3",
+                "title": "お気にいりした案件の情報が更新されました。",
+                "content": "あなたがお気にいりした<案件名>の情報が更新されました。 \n <案件名>の詳細はこちらからご確認ください。",
+                "sent_datetime": "2019-10-10 10:00:00"
+            }
+        }
+    ]
+
+## Notifications [/api/users/:user_id/notifications/:user_notification_id]
+
+### PATCH
+お知らせ詳細を取得する <br>
+user_notificationsのis_openedをtrueにする <br>
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+        {
+            "user_notifications_id": "2",
+            "is_opened": "true",
+            "notification" {
+                "id": "3",
+                "title": "お気にいりした案件の情報が更新されました。",
+                "content": "あなたがお気にいりした<案件名>の情報が更新されました。 \n <案件名>の詳細はこちらからご確認ください。",
+                "sent_datetime": "2019-10-10 10:00:00"
+            }
+        }
