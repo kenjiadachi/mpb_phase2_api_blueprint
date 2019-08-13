@@ -10,17 +10,17 @@ Cacoo: 1.3
 + Request (application/json)
 
     + Attribute
-
-        + name: Peach株式会社 (string, required) - 会社名
-        + postal_code: `123-4567` (string, required) - 郵便番号
-        + address: 東京都千代田区丸の内1-8-3 (string, required) - 住所
-        + url: http://example.com/ (string, required) - 会社URL
-        + phone_number: `03-1234-5678` (string, required) - 会社電話番号
-        + staff_attributes: (object) - スタッフ情報
-            + first_name: 航 (string, required) - 名
-            + last_name: 菊地 (string, required) - 姓
-            + phone_number: `080-1234-5678` (string, required) - 担当者電話番号
-            + email: staff@example.com (string, required) - 担当者電話番号
+        + company: (object)
+            + name: Peach株式会社 (string, required) - 会社名
+            + postal_code: `123-4567` (string, required) - 郵便番号
+            + address: 東京都千代田区丸の内1-8-3 (string, required) - 住所
+            + url: http://example.com/ (string, required) - 会社URL
+            + phone_number: `03-1234-5678` (string, required) - 会社電話番号
+            + staff_attributes: (object) - スタッフ情報
+                + first_name: 航 (string, required) - 名
+                + last_name: 菊地 (string, required) - 姓
+                + phone_number: `080-1234-5678` (string, required) - 担当者電話番号
+                + email: staff@example.com (string, required) - 担当者電話番号
 
 
 + Response 200 (application/json)
@@ -61,17 +61,17 @@ Cacoo: 22, 22.6
 + Request (application/json)
 
     + Attribute
-
-        + first_name: 航 (string, required) - 名
-        + last_name: 菊地 (string, required) - 姓
-        + phone_number: `080-1234-5678` (string, required) - 担当者電話番号
-        + email: staff@example.com (string, required) - 担当者電話番号
-        + staff_mail_alert_attributes: (object) - スタッフ情報
-            + needs_when_threads_is_created: true (boolean, required) - メッセージスレッドが作成された時に通知メールを受け取る
-            + needs_when_threads_is_deleted: true (boolean, required) - メッセージスレッドが削除された時に通知メールを受け取る
-            + needs_when_favorite_is_changed: true (boolean, required) - お気に入りした人材の情報が変更された時に通知メールを受け取る
-            + needs_when_favorite_is_hired: true (boolean, required) - お気に入りした人材が他案件で決定した時に通知メールを受け取る
-            + needs_before_mtg: true (boolean, required) - 確定した面談日の前日に通知メールを受け取る
+        + staff: (object)
+            + first_name: 航 (string, required) - 名
+            + last_name: 菊地 (string, required) - 姓
+            + phone_number: `080-1234-5678` (string, required) - 担当者電話番号
+            + email: staff@example.com (string, required) - 担当者電話番号
+            + staff_mail_alert_attributes: (object) - スタッフ情報
+                + needs_when_threads_is_created: true (boolean, required) - メッセージスレッドが作成された時に通知メールを受け取る
+                + needs_when_threads_is_deleted: true (boolean, required) - メッセージスレッドが削除された時に通知メールを受け取る
+                + needs_when_favorite_is_changed: true (boolean, required) - お気に入りした人材の情報が変更された時に通知メールを受け取る
+                + needs_when_favorite_is_hired: true (boolean, required) - お気に入りした人材が他案件で決定した時に通知メールを受け取る
+                + needs_before_mtg: true (boolean, required) - 確定した面談日の前日に通知メールを受け取る
 
 + Response 200 (application/json)
 
@@ -184,72 +184,73 @@ Cacoo: 26
 + Request (application/json)
 
     + Attribute
-        + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
-        + start_date: `2019-01-01` - 開始日
-        + end_date: `2019-04-01` - 終了日
-        + holiday_id: (number, required) - 休日マスタのID
-        + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
-        + min_working_date_count: 3 (number) - 最低稼働日数
-        + is_remotable: true (boolean, required) - リモート可
-        + is_dressable: true (boolean, required) - 服装自由
-        + is_newbiable: true (boolean, required) - 未経験OK
-        + exists_travel_cost: true (boolean, required) - 交通費支給
-        + is_flex: true (boolean, required) - フレックス制
-        + closest_station_line: 丸ノ内線 (string)
-        + closest_station_name: 東京駅 (string)
-        + unit: (enum, required) - 単価の単位
-            + hourly (string) - 時給
-            + monthly (string) - 月収
-            + yearly (string) - 年収
-        + min_price: 2000 (number) - 最低価格
-        + max_price: 3000 (number) - 最高価格
-        + min_personnel: 3 (number) - 最低募集人数
-        + max_personnel: 5 (number) - 最高募集人数
-        + min_mtg_count: 1 (number) - 最低面談回数
-        + max_mtg_count: 3 (number) - 最高面談回数
-        + remark: 特にありません。 (string) - 備考
-        + needed_skill: `【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル` (string) - スキル詳細
-        + work_content: 開発のお仕事です。 (string) - 作業内容
-        + industry_id: 3 (number) - 業界マスタのID
-        + min_settlement_hour: 30 (number) - 最低精算基準時間
-        + max_settlement_hour: 50 (number) - 最高精算基準時間
-        + preferred_skills_attributes: (array)
-            + (object)
-                + skill_id: 1 (number) - スキルマスタのID
-            + (object)
-                + skill_id: 2 (number) - スキルマスタのID
-        + required_skills_attributes: (array)
-            + (object)
-                + skill_id: 1 (number) - スキルマスタのID
-            + (object)
-                + skill_id: 2 (number) - スキルマスタのID
-        + project_skill_categories_attributes: (array)
-            + (object)
-                + skill_category_id: 1 (number) - スキルカテゴリマスタのID
-            + (object)
-                + skill_category_id: 2 (number) - スキルカテゴリマスタのID
-        + project_phases_attributes: (array)
-            + (object)
-                + phase_id: 1 (number) - 担当工程マスタのID
-            + (object)
-                + phase_id: 2 (number) - 担当工程マスタのID
-        + project_positions_attributes: (array)
-            + (object)
-                + position_id: 1 (number) - ポジションマスタのID
-            + (object)
-                + position_id: 2 (number) - ポジションマスタのID
-        + project_contract_styles_attributes: (array)
-            + (object)
-                + contract_style_id: 1 (number) - 契約形態マスタのID
-            + (object)
-                + contract_style_id: 2 (number) - 契約形態マスタのID
+        + project: (object)
+            + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
+            + start_date: `2019-01-01` - 開始日
+            + end_date: `2019-04-01` - 終了日
+            + holiday_id: (number, required) - 休日マスタのID
+            + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
+            + min_working_date_count: 3 (number) - 最低稼働日数
+            + is_remotable: true (boolean, required) - リモート可
+            + is_dressable: true (boolean, required) - 服装自由
+            + is_newbiable: true (boolean, required) - 未経験OK
+            + exists_travel_cost: true (boolean, required) - 交通費支給
+            + is_flex: true (boolean, required) - フレックス制
+            + closest_station_line: 丸ノ内線 (string)
+            + closest_station_name: 東京駅 (string)
+            + unit: (enum, required) - 単価の単位
+                + hourly (string) - 時給
+                + monthly (string) - 月収
+                + yearly (string) - 年収
+            + min_price: 2000 (number) - 最低価格
+            + max_price: 3000 (number) - 最高価格
+            + min_personnel: 3 (number) - 最低募集人数
+            + max_personnel: 5 (number) - 最高募集人数
+            + min_mtg_count: 1 (number) - 最低面談回数
+            + max_mtg_count: 3 (number) - 最高面談回数
+            + remark: 特にありません。 (string) - 備考
+            + needed_skill: `【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル` (string) - スキル詳細
+            + work_content: 開発のお仕事です。 (string) - 作業内容
+            + industry_id: 3 (number) - 業界マスタのID
+            + min_settlement_hour: 30 (number) - 最低精算基準時間
+            + max_settlement_hour: 50 (number) - 最高精算基準時間
+            + preferred_skills_attributes: (array)
+                + (object)
+                    + skill_id: 1 (number) - スキルマスタのID
+                + (object)
+                    + skill_id: 2 (number) - スキルマスタのID
+            + required_skills_attributes: (array)
+                + (object)
+                    + skill_id: 1 (number) - スキルマスタのID
+                + (object)
+                    + skill_id: 2 (number) - スキルマスタのID
+            + project_skill_categories_attributes: (array)
+                + (object)
+                    + skill_category_id: 1 (number) - スキルカテゴリマスタのID
+                + (object)
+                    + skill_category_id: 2 (number) - スキルカテゴリマスタのID
+            + project_phases_attributes: (array)
+                + (object)
+                    + phase_id: 1 (number) - 担当工程マスタのID
+                + (object)
+                    + phase_id: 2 (number) - 担当工程マスタのID
+            + project_positions_attributes: (array)
+                + (object)
+                    + position_id: 1 (number) - ポジションマスタのID
+                + (object)
+                    + position_id: 2 (number) - ポジションマスタのID
+            + project_contract_styles_attributes: (array)
+                + (object)
+                    + contract_style_id: 1 (number) - 契約形態マスタのID
+                + (object)
+                    + contract_style_id: 2 (number) - 契約形態マスタのID
 
 + Response 200 (application/json)
 
     + Attribute
 
         + code: 200 (number)
-        + message: Success user create (string)
+        + message: Success project create (string)
 
 + Response 400 (application/json)
 
@@ -322,66 +323,66 @@ Cacoo: 26
 + Request (application/json)
 
     + Attribute
-
-        + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
-        + start_date: `2019-01-01` - 開始日
-        + end_date: `2019-04-01` - 終了日
-        + holiday_id: (number, required) - 休日マスタのID
-        + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
-        + min_working_date_count: 3 (number) - 最低稼働日数
-        + is_remotable: true (boolean, required) - リモート可
-        + is_dressable: true (boolean, required) - 服装自由
-        + is_newbiable: true (boolean, required) - 未経験OK
-        + exists_travel_cost: true (boolean, required) - 交通費支給
-        + is_flex: true (boolean, required) - フレックス制
-        + closest_station_line: 丸ノ内線 (string)
-        + closest_station_name: 東京駅 (string)
-        + unit: (enum, required) - 単価の単位
-            + hourly (string) - 時給
-            + monthly (string) - 月収
-            + yearly (string) - 年収
-        + min_price: 2000 (number) - 最低価格
-        + max_price: 3000 (number) - 最高価格
-        + min_personnel: 3 (number) - 最低募集人数
-        + max_personnel: 5 (number) - 最高募集人数
-        + min_mtg_count: 1 (number) - 最低面談回数
-        + max_mtg_count: 3 (number) - 最高面談回数
-        + remark: 特にありません。 (string) - 備考
-        + needed_skill: `【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル` (string) - スキル詳細
-        + work_content: 開発のお仕事です。 (string) - 作業内容
-        + industry_id: 3 (number) - 業界マスタのID
-        + min_settlement_hour: 30 (number) - 最低精算基準時間
-        + max_settlement_hour: 50 (number) - 最高精算基準時間
-        + preferred_skills_attributes: (array)
-            + (object)
-                + skill_id: 1 (number) - スキルマスタのID
-            + (object)
-                + skill_id: 2 (number) - スキルマスタのID
-        + required_skills_attributes: (array)
-            + (object)
-                + skill_id: 1 (number) - スキルマスタのID
-            + (object)
-                + skill_id: 2 (number) - スキルマスタのID
-        + project_skill_categories_attributes: (array)
-            + (object)
-                + skill_category_id: 1 (number) - スキルカテゴリマスタのID
-            + (object)
-                + skill_category_id: 2 (number) - スキルカテゴリマスタのID
-        + project_phases_attributes: (array)
-            + (object)
-                + phase_id: 1 (number) - 担当工程マスタのID
-            + (object)
-                + phase_id: 2 (number) - 担当工程マスタのID
-        + project_positions_attributes: (array)
-            + (object)
-                + position_id: 1 (number) - ポジションマスタのID
-            + (object)
-                + position_id: 2 (number) - ポジションマスタのID
-        + project_contract_styles_attributes: (array)
-            + (object)
-                + contract_style_id: 1 (number) - 契約形態マスタのID
-            + (object)
-                + contract_style_id: 2 (number) - 契約形態マスタのID
+        + project: (object)
+            + name: 京橋駅インフラエンジニア案件 (string, required) - 案件名
+            + start_date: `2019-01-01` - 開始日
+            + end_date: `2019-04-01` - 終了日
+            + holiday_id: (number, required) - 休日マスタのID
+            + scheduled_hour_count: 30 (number) - 月間稼働見込み時間
+            + min_working_date_count: 3 (number) - 最低稼働日数
+            + is_remotable: true (boolean, required) - リモート可
+            + is_dressable: true (boolean, required) - 服装自由
+            + is_newbiable: true (boolean, required) - 未経験OK
+            + exists_travel_cost: true (boolean, required) - 交通費支給
+            + is_flex: true (boolean, required) - フレックス制
+            + closest_station_line: 丸ノ内線 (string)
+            + closest_station_name: 東京駅 (string)
+            + unit: (enum, required) - 単価の単位
+                + hourly (string) - 時給
+                + monthly (string) - 月収
+                + yearly (string) - 年収
+            + min_price: 2000 (number) - 最低価格
+            + max_price: 3000 (number) - 最高価格
+            + min_personnel: 3 (number) - 最低募集人数
+            + max_personnel: 5 (number) - 最高募集人数
+            + min_mtg_count: 1 (number) - 最低面談回数
+            + max_mtg_count: 3 (number) - 最高面談回数
+            + remark: 特にありません。 (string) - 備考
+            + needed_skill: `【必須】\n・PHP 5年以上の開発経験\n・JavaScript、HTML、CSSなどのフロントエンド技術を使った開発経験3年以上\n・設計書、テストケース等のドキュメント作成スキル` (string) - スキル詳細
+            + work_content: 開発のお仕事です。 (string) - 作業内容
+            + industry_id: 3 (number) - 業界マスタのID
+            + min_settlement_hour: 30 (number) - 最低精算基準時間
+            + max_settlement_hour: 50 (number) - 最高精算基準時間
+            + preferred_skills_attributes: (array)
+                + (object)
+                    + skill_id: 1 (number) - スキルマスタのID
+                + (object)
+                    + skill_id: 2 (number) - スキルマスタのID
+            + required_skills_attributes: (array)
+                + (object)
+                    + skill_id: 1 (number) - スキルマスタのID
+                + (object)
+                    + skill_id: 2 (number) - スキルマスタのID
+            + project_skill_categories_attributes: (array)
+                + (object)
+                    + skill_category_id: 1 (number) - スキルカテゴリマスタのID
+                + (object)
+                    + skill_category_id: 2 (number) - スキルカテゴリマスタのID
+            + project_phases_attributes: (array)
+                + (object)
+                    + phase_id: 1 (number) - 担当工程マスタのID
+                + (object)
+                    + phase_id: 2 (number) - 担当工程マスタのID
+            + project_positions_attributes: (array)
+                + (object)
+                    + position_id: 1 (number) - ポジションマスタのID
+                + (object)
+                    + position_id: 2 (number) - ポジションマスタのID
+            + project_contract_styles_attributes: (array)
+                + (object)
+                    + contract_style_id: 1 (number) - 契約形態マスタのID
+                + (object)
+                    + contract_style_id: 2 (number) - 契約形態マスタのID
 
 + Response 200 (application/json)
 
@@ -399,8 +400,17 @@ Cacoo: 26
 
 
 ### DELETE
-案件を削除する
+案件を削除する <br>
+案件が公開状態だった場合、Projectをお気に入りしているUserにNotificationが飛びます
 
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success company destroy (string)
 
 
 ## Projects  [/api/projects/search]
@@ -472,6 +482,48 @@ Cacoo: 30
         }
     ]
 
+## Projects [/api/companies/:company_id/projects/:project_id/open]
+
+### PATCH
+Projectを公開する
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success project open (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
+
+## Projects [/api/companies/:company_id/projects/:project_id/close]
+
+### PATCH
+Projectを非公開にする <br>
+Projectをお気に入りしているUserにNotificationが飛びます
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute
+
+        + code: 200 (number)
+        + message: Success project close (string)
+
++ Response 400 (application/json)
+
+    + Attribute
+
+        + code: 400 (number)
+        + message: Bad Request (string)
 
 ## Notifications [/api/staffs/:staff_id/notifications/]
 
