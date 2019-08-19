@@ -75,6 +75,47 @@ Cacoo: 24
           }
       ]
 
+## Offers [/api/users/:user_id/offers]
+
+### GET
+
+オファーが来た案件を取得する <br>
+is_hiddenがfalseのもののみ取得する <br>
+Cacoo: 21
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+      [
+          {
+              "is_finished": false,
+              "status": "未着手",
+              "project": {
+                  "id": 1,
+                  "name": "東京駅案件",
+                  "company": {
+                      "name": "Peach株式会社"
+                  }
+              }
+          },
+          {
+              "is_finished": false,
+              "status": "未着手",
+              "project": {
+                  "id": 1,
+                  "name": "東京駅案件",
+                  "company": {
+                      "name": "Peach株式会社"
+                  }
+              }
+          }
+      ]
+
 ## Offers [/api/companies/:company_id/projects/:project_id/offers/:user_id]
 
 ### POST
