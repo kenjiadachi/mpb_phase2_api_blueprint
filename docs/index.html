@@ -3,23 +3,33 @@
 Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
 ナビバーの吹き出しにも使用</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/users/:id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"98296425-f344-46ec-bebd-e91f05620bb8"</span></span>,
-    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"菊地 航"</span></span>,
-    "<span class="hljs-attribute">first_name</span>": <span class="hljs-value"><span class="hljs-string">"航"</span></span>,
-    "<span class="hljs-attribute">last_name</span>": <span class="hljs-value"><span class="hljs-string">"菊地"</span></span>,
-    "<span class="hljs-attribute">first_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"わたる"</span></span>,
-    "<span class="hljs-attribute">last_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"きくち"</span></span>,
-    "<span class="hljs-attribute">display_name</span>": <span class="hljs-value"><span class="hljs-string">"DH280"</span></span>,
-    "<span class="hljs-attribute">sex</span>": <span class="hljs-value"><span class="hljs-string">"男性"</span></span>,
-    "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990-01-01"</span></span>,
-    "<span class="hljs-attribute">age</span>": <span class="hljs-value"><span class="hljs-number">24</span></span>,
-    "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
-    "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
-    "<span class="hljs-attribute">skill_remark</span>": <span class="hljs-value"><span class="hljs-string">"秘書検定2級"</span></span>,
-    "<span class="hljs-attribute">closest_station</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線 四ツ谷駅"</span></span>,
-    "<span class="hljs-attribute">closest_station_line</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線"</span></span>,
-    "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value"><span class="hljs-string">"四ツ谷駅"</span></span>,
-}</code></pre><div style="height: 1px;"></div></div></div></div><div id="user周り-users-patch" class="action patch"><h4 class="action-heading"><div class="name"></div><a href="#user周り-users-patch" class="method patch">PATCH</a><code class="uri">/api/users/:id</code></h4><p>User情報を編集する <br>
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"98296425-f344-46ec-bebd-e91f05620bb8"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"菊地 航"</span></span>,
+  "<span class="hljs-attribute">first_name</span>": <span class="hljs-value"><span class="hljs-string">"航"</span></span>,
+  "<span class="hljs-attribute">last_name</span>": <span class="hljs-value"><span class="hljs-string">"菊地"</span></span>,
+  "<span class="hljs-attribute">first_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"わたる"</span></span>,
+  "<span class="hljs-attribute">last_name_kana</span>": <span class="hljs-value"><span class="hljs-string">"きくち"</span></span>,
+  "<span class="hljs-attribute">display_name</span>": <span class="hljs-value"><span class="hljs-string">"DH280"</span></span>,
+  "<span class="hljs-attribute">sex</span>": <span class="hljs-value"><span class="hljs-string">"男性"</span></span>,
+  "<span class="hljs-attribute">birthdate</span>": <span class="hljs-value"><span class="hljs-string">"1990-01-01"</span></span>,
+  "<span class="hljs-attribute">age</span>": <span class="hljs-value"><span class="hljs-number">24</span></span>,
+  "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
+  "<span class="hljs-attribute">skill_remark</span>": <span class="hljs-value"><span class="hljs-string">"秘書検定2級"</span></span>,
+  "<span class="hljs-attribute">closest_station</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線 四ツ谷駅"</span></span>,
+  "<span class="hljs-attribute">closest_station_line</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線"</span></span>,
+  "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value"><span class="hljs-string">"四ツ谷駅"</span></span>,
+  "<span class="hljs-attribute">professions</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"エンジニア"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"デザイナー"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="user周り-users-patch" class="action patch"><h4 class="action-heading"><div class="name"></div><a href="#user周り-users-patch" class="method patch">PATCH</a><code class="uri">/api/users/:id</code></h4><p>User情報を編集する <br>
 Cacoo: 11</p>
 <h4>Example URI</h4><div class="definition"><span class="method patch">PATCH</span>&nbsp;<span class="uri"><span class="hostname">https://www.example.com</span>/api/users/:id</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
@@ -32,7 +42,15 @@ Cacoo: 11</p>
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"080-1234-5678"</span></span>,
     "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"foo@example.com"</span></span>,
     "<span class="hljs-attribute">closest_station_line</span>": <span class="hljs-value"><span class="hljs-string">"丸ノ内線"</span></span>,
-    "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value"><span class="hljs-string">"四ツ谷駅"</span>
+    "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value"><span class="hljs-string">"四ツ谷駅"</span></span>,
+    "<span class="hljs-attribute">user_professions_attributes</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">profession_id</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">profession_id</span>": <span class="hljs-value"><span class="hljs-number">2</span>
+      </span>}
+    ]
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -84,6 +102,9 @@ Cacoo: 11</p>
         "<span class="hljs-attribute">closest_station_name</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"最寄駅の駅名"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">user_professions_attributes</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
         </span>}
       </span>}
     </span>}

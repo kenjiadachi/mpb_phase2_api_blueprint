@@ -34,6 +34,16 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
         "closest_station": "丸ノ内線 四ツ谷駅",
         "closest_station_line": "丸ノ内線",
         "closest_station_name": "四ツ谷駅",
+        "professions": [
+            {
+                "id": 1,
+                "name": "エンジニア"
+            },
+            {
+                "id": 2,
+                "name": "デザイナー"
+            }
+        ]
     }
 
 ### PATCH
@@ -56,6 +66,11 @@ Cacoo: 11
             + email: foo@example.com (string) - メールアドレス
             + closest_station_line: 丸ノ内線 (string) - 最寄駅の路線
             + closest_station_name: 四ツ谷駅 (string) - 最寄駅の駅名
+            + user_professions_attributes: (array)
+                + (object)
+                    + profession_id: 1 (number) - 職種マスタのID
+                + (object)
+                    + profession_id: 2 (number) - 職種マスタのID
 
 + Response 200 (application/json)
 
