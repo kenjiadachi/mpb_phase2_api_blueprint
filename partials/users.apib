@@ -614,20 +614,16 @@ Cacoo: 16.1~4
             + members_count: 5　(number) - チーム人数
             + project_name: 生産管理システムバージョンアップ支援 (string, required) - プロジェクト/業務名
             + project_description: Rails化を行いました。 (string) - プロジェクト/業務概要
-            + resume_engineer_attributes: (object)
-                + contains_requirement_definition: false (boolean) - エンジニア追加項目/要件定義に携わったか？
-                + contains_basic_design: false (boolean) - エンジニア追加項目/基本設計に携わったか？
-                + contains_detailed_design: false (boolean) - エンジニア追加項目/詳細設計に携わったか？
-                + contains_coding: true (boolean) - エンジニア追加項目/実装に携わったか？
-                + contains_test: true (boolean) - エンジニア追加項目/テストに携わったか？
-                + contains_maintenance: true (boolean) - エンジニア追加項目/保守・運用に携わったか？
-            + resume_designer_attributes: (object)
-                + contains_graphic_design: false (boolean) - デザイナー追加項目/グラフィックに携わったか？
-                + contains_ui_ux_design: false (boolean) - デザイナー追加項目/UI/UXに携わったか？
-                + contains_web_design: false (boolean) - デザイナー追加項目/Webに携わったか？
-                + contains_dtp_design: true (boolean) - デザイナー追加項目/DTPに携わったか？
-                + contains_game_design: true (boolean) - デザイナー追加項目/ゲームに携わったか？
-                + contains_cg_design: true (boolean) - デザイナー追加項目/CGに携わったか？
+            + resume_development_processes_attributes: (array)
+                + (object)
+                    + development_process_id: 1 (number) - 開発工程マスタのID
+                + (object)
+                    + development_process_id: 2 (number) - 開発工程マスタのID
+            + resume_design_types_attributes: (array)
+                + (object)
+                    + design_type_id: 1 (number) - デザインの種類マスタのID
+                + (object)
+                    + design_type_id: 2 (number) - デザインの種類マスタのID
 
 + Response 200 (application/json)
 
@@ -650,6 +646,8 @@ Cacoo: 16.1~4
 
 ### PATCH
 職務経歴を編集する <br>
+resume_development_processes_attributesなどの複数項目を選択するものは、削除等の対応を行うためこれまでのものを削除し、新規にrelationを貼り直す構造になっています。<br>
+resume_development_processes_attributesなどは何もない場合(relationが存在しない場合)はnilで送り、変更がない場合はresume_development_processes_attributes自体を送信しないようにしてください。<br>
 Cacoo: 16.1~4
 
 + Request (application/json)
@@ -665,20 +663,16 @@ Cacoo: 16.1~4
             + members_count: 5　(number) - チーム人数
             + project_name: 生産管理システムバージョンアップ支援 (string, required) - プロジェクト/業務名
             + project_description: Rails化を行いました。 (string) - プロジェクト/業務概要
-            + resume_engineer_attributes: (object)
-                + contains_requirement_definition: false (boolean) - エンジニア追加項目/要件定義に携わったか？
-                + contains_basic_design: false (boolean) - エンジニア追加項目/基本設計に携わったか？
-                + contains_detailed_design: false (boolean) - エンジニア追加項目/詳細設計に携わったか？
-                + contains_coding: true (boolean) - エンジニア追加項目/実装に携わったか？
-                + contains_test: true (boolean) - エンジニア追加項目/テストに携わったか？
-                + contains_maintenance: true (boolean) - エンジニア追加項目/保守・運用に携わったか？
-            + resume_designer_attributes: (object)
-                + contains_graphic_design: false (boolean) - デザイナー追加項目/グラフィックに携わったか？
-                + contains_ui_ux_design: false (boolean) - デザイナー追加項目/UI/UXに携わったか？
-                + contains_web_design: false (boolean) - デザイナー追加項目/Webに携わったか？
-                + contains_dtp_design: true (boolean) - デザイナー追加項目/DTPに携わったか？
-                + contains_game_design: true (boolean) - デザイナー追加項目/ゲームに携わったか？
-                + contains_cg_design: true (boolean) - デザイナー追加項目/CGに携わったか？
+            + resume_development_processes_attributes: (array)
+                + (object)
+                    + development_process_id: 1 (number) - 開発工程マスタのID
+                + (object)
+                    + development_process_id: 2 (number) - 開発工程マスタのID
+            + resume_design_types_attributes: (array)
+                + (object)
+                    + design_type_id: 1 (number) - デザインの種類マスタのID
+                + (object)
+                    + design_type_id: 2 (number) - デザインの種類マスタのID
 
 + Response 200 (application/json)
 
@@ -809,22 +803,26 @@ Cacoo: 10, 10.5, 33, 33.1
                 "members_count": "5",
                 "project_name": "生産管理システムバージョンアップ支援",
                 "project_description": "Rails化を行いました。",
-                "resume_engineer": {
-                    "contains_requirement_definition": "false",
-                    "contains_basic_design": "false",
-                    "contains_detailed_design": "false",
-                    "contains_coding": "true",
-                    "contains_test": "true",
-                    "contains_maintenance": "true"
-                },
-                "resume_designer": {
-                    "contains_graphic_design": "false",
-                    "contains_ui_ux_design": "false",
-                    "contains_web_design": "false",
-                    "contains_dtp_design": "true",
-                    "contains_game_design": "true",
-                    "contains_cg_design": "true"
-                }
+                "resume_development_processes": [
+                    {
+                        "id": "1",
+                        "name": "要件定義"
+                    },
+                    {
+                        "id": "2",
+                        "name": "基本設計"
+                    }
+                ],
+                "resume_design_types": [
+                    {
+                        "id": "1",
+                        "name": "グラフィック"
+                    },
+                    {
+                        "id": "2",
+                        "name": "UI/UX"
+                    }
+                ]
             }
         ]
 

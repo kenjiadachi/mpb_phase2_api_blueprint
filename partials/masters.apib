@@ -192,3 +192,52 @@
             "name": "要件定義"
         }
     ]
+
+
+## DevelopmentProcesses [/api/development_processes]
+
+### GET
+開発工程
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "要件定義"
+        },
+        {
+            "id": "2",
+            "name": "基本設計"
+        }
+    ]
+
+## DesignTypes [/api/design_types]
+
+### GET
+デザインの種類
+
++ Request
+  + Headers
+    Content-Type: application/json
+
++ Response 200 (application/json)
+
+  + Body
+
+    [
+        {
+            "id": "1",
+            "name": "グラフィック"
+        },
+        {
+            "id": "2",
+            "name": "UI/UX"
+        }
+    ]
