@@ -48,6 +48,8 @@ Cacoo: 11, 18, 21.0~21.2, 22, 22.1 <br>
 
 ### PATCH
 User情報を編集する <br>
+user_professions_attributesなどの複数項目を選択するものは、削除等の対応を行うためこれまでのものを削除し、新規にrelationを貼り直す構造になっています。<br>
+user_professions_attributesなどは何もない場合(relationが存在しない場合)はnilで送り、変更がない場合はuser_professions_attributes自体を送信しないようにしてください。<br>
 Cacoo: 11
 
 + Request (application/json)
